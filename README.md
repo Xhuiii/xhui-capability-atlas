@@ -56,13 +56,21 @@ P0 是这个仓库的主产品，也是整个系统的核心层。
 
 ## Project Domains / 项目域
 
-This repository is organized into six project domains. P0 is the main simulator layer. P1-P5 provide different kinds of inputs to P0.
+This repository is organized into six project domains. P0 is the main skill simulator layer. P1-P5 provide different kinds of inputs to P0.
+
+这个仓库由六个项目域组成。P0 是主技能模拟层，P1-P5 分别从不同方向为 P0 提供输入。
 
 ### P0 — Personal Skill Simulator Atlas / 个人技能模拟器地图
 
 Status: Active mainline / 当前主线
 
 P0 is the main skill simulator atlas. It collects and transforms real skills, project skills, what-if ideas, speculative thinking, magical ideas, product imagination, content experiments, and self-growth inputs into a visual and interactive personal skill map.
+
+中文说明：
+
+P0 是整个仓库的主产品和主技能模拟层。它负责把现实项目中已经被证明的技能、个人项目中显影出的能力、what-if 脑洞、思辨设计、产品想象、内容表达和自我成长输入，转化成一张可持续生长的个人技能地图。
+
+它不是普通作品集，也不是简历库，而是用来模拟“我已经有什么能力”和“我还可能长出什么能力”的核心系统。
 
 ### P1 — Agent Workbench / Agent 工作台
 
@@ -74,6 +82,14 @@ It helps capture ideas, classify them into P0-P5, manage issues, create daily ac
 
 P1 provides project management, idea routing, automation, and reflection workflows to P0.
 
+中文说明：
+
+P1 是我的个人 AI 项目经理工作台。它负责把 Hermes、Discord、GitHub、Flomo 和未来的 coding agents 串起来，让我的想法不要散落在聊天、备忘录和脑子里。
+
+它的作用不是制造更多任务，而是帮我接住想法、判断它属于 P0-P5 哪个项目域、拆成最小行动、管理 GitHub issues，并在每天或每周帮我收敛重点。
+
+P1 会向 P0 输入项目管理记录、想法分流结果、每日行动建议、复盘内容和 agent skill map，让 P0 不只是静态展示，而是可以持续更新。
+
 ### P2 — AI Product Lab / AI 产品实验池
 
 Status: Next track / 近期准备启动
@@ -81,6 +97,14 @@ Status: Next track / 近期准备启动
 P2 collects AI product experiments, side-project ideas, small tools, high-freedom game concepts, playful systems, interactive narrative, sandbox-style creation tools, and broader product imagination.
 
 P2 provides product imagination, system design experiments, AI-native ideas, and prototype materials to P0.
+
+中文说明：
+
+P2 是我的 AI 产品实验池，也包括更宽泛的产品脑洞和玩乐化系统实验。
+
+它不只收纳狭义 AI 工具，也可以包括 AI 副业判断器、AI 作品集工具、高自由度游戏产品、豌豆类游戏产品、互动叙事、沙盒式创作工具、AI 陪伴/角色系统，以及暂时还无法归类的产品想象。
+
+P2 会向 P0 输入我的产品想象力、系统设计能力、AI-native 思考、原型能力和实验案例。它可以成为未来作品集、内容表达或商业想象的素材来源。
 
 ### P3 — Content and Personal Brand / 内容与个人品牌
 
@@ -90,6 +114,14 @@ P3 collects content ideas, personal expression, Xiaohongshu topics, AI-generated
 
 P3 provides expression assets, personal voice, aesthetic identity, content experiments, and audience feedback to P0.
 
+中文说明：
+
+P3 是我的内容与个人品牌实验区。它负责收纳小红书选题、个人表达、设计师日常、荒诞幽默、AI 生成内容、审美实验、设计观察和半隐匿表达策略。
+
+它不只是“发内容”，而是用内容反过来训练我的表达能力、审美人格、个人叙事和公众可见度。
+
+P3 会向 P0 输入内容资产、表达风格、个人声音、受众反馈和审美身份，让 P0 不只是能力地图，也能体现“我是一个怎样的设计师 / 创作者”。
+
 ### P4 — Designer Shop Lab / 设计师的店
 
 Status: Backlog / 暂存
@@ -97,6 +129,14 @@ Status: Backlog / 暂存
 P4 collects design studio ideas, aesthetic experiments, digital products, commercial concepts, and future productization possibilities.
 
 P4 is currently kept in backlog. It should not compete with the mainline yet, but it can provide long-term commercial and aesthetic imagination to P0.
+
+中文说明：
+
+P4 是“设计师的店”相关的长期商业想象池。它收纳我对审美实验、数字产品、个人 IP 商品、行为艺术展、设计工作室、商业化产品和未来小店形态的想象。
+
+它现在先不作为主线推进，避免同时开启太多方向。但它很重要，因为它承接的是我对“设计如何变成作品、商品、体验或生活方式”的长期想象。
+
+P4 会向 P0 输入商业想象、审美实验、个人 IP 方向和未来产品化可能性。
 
 ### P5 — Exercise, Health, and Self-Growth / 运动健康与自我成长
 
@@ -108,7 +148,15 @@ It is not medicalized and should not create anxiety. Its purpose is to support l
 
 P5 provides energy, habits, routines, body-state observations, and long-term execution support to P0.
 
----
+中文说明：
+
+P5 是轻量的运动健康与自我成长支持系统。它用于记录运动、精力、睡眠、习惯、状态变化和未来可能接入的可穿戴数据。
+
+它不是医疗系统，也不是焦虑制造器。它的目标不是让我过度监控自己，而是帮我更稳定地行动、更有能量地生活，并支撑长期创作和项目推进。
+
+P5 会向 P0 输入状态变量、行动力记录、习惯变化和自我成长轨迹，让 P0 不只展示能力，也能看到能力背后的能量和长期执行条件。
+
+
 
 ## How P0 Receives Inputs / P0 如何接收其他项目输入
 
