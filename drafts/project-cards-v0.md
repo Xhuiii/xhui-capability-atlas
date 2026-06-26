@@ -1,289 +1,432 @@
-# Project Cards v0 / 项目卡片 v0
+# Project Cards v0 / Career Capability Layer 年度项目成长卡片 v0
 
-本文档是 P0 `Personal Skill Simulator Atlas / 个人技能模拟器地图` 的第一批项目卡片草稿。
+本文件属于 P0 / Career Capability Layer / 职业能力层。
 
-这些项目卡片用于把已做过或可抽象表达的项目经验，转化为 P0 中可以展示、连接和复用的项目资产。当前版本全部使用抽象项目方向与脱敏描述，不包含公司敏感信息、内部数据来源、同事姓名、真实敏感项目名或未公开细节。
+它不是 P0 的全部，也不把 P0 缩小成职业总结。P0 的完整定位仍然是 `Personal Skill Simulator Atlas / 个人技能模拟器地图`，会持续容纳真实项目能力、What-if 想象表达、AI 产品实验、内容与个人品牌、设计师的店与审美实验等多个层。
 
-这些卡片不是最终作品集文案，而是后续整理项目证据链、能力映射、时间线和可视化展示的基础材料。
+Career Capability Layer 是 P0 当前优先实现的一个模块，因为它有最清晰的真实项目证据、能力证据和可展示价值。这个文件用于把 2022-2026 的职场工作经历整理成可展示、可更新、可视化的数据源。后续 P0 还会接入 What-if Expression Layer / 想象表达层、AI Product Lab Layer / AI 产品实验层、Content & Personal Brand Layer / 内容与个人品牌层、Designer Shop / Studio Layer / 设计师的店与审美实验层等更有意思的层。
 
----
-
-## Card 01 — 通信类核心体验优化 / Core Communication Experience Optimization
-
-### 项目代号 / Project Code Name
-
-Project Signal Flow / 信号流体验优化
-
-### 项目类型 / Project Type
-
-通信类核心体验优化 / Core communication experience optimization
-
-### 背景问题 / Problem Context
-
-通信类产品通常涉及高频使用、强时效性、多状态切换和低容错体验。用户在发送、接收、管理或理解信息时，容易受到流程复杂、状态不清、反馈不及时或异常路径不明确的影响。
-
-该项目方向关注如何在不暴露具体业务细节的前提下，抽象出通信体验中的核心问题：信息是否清楚到达、用户是否知道当前状态、异常是否能被理解、关键操作是否足够低负担。
-
-### 我的角色 / My Role
-
-作为体验设计参与者，负责从用户路径、交互状态、界面反馈和设计说明等角度，拆解问题并提出可落地的优化方向。
-
-### 关键设计动作 / Key Design Actions
-
-- 梳理核心用户路径 / Core user flow mapping
-- 拆解正常、等待、失败、异常等关键状态 / State decomposition
-- 优化关键反馈和操作提示 / Feedback and affordance refinement
-- 建立脱敏问题清单与优先级 / Sanitized issue prioritization
-- 将设计方案整理为可沟通的交付材料 / Design handoff preparation
-
-### 体现的能力 / Capabilities Demonstrated
-
-- 复杂系统体验拆解能力
-- 端到端交互设计交付能力
-- 用户洞察与体验指标转化能力
-- 多状态交互设计能力
-
-### 可迁移方向 / Transferable Directions
-
-- 即时通信和协作工具
-- AI 辅助消息处理
-- 高时效任务流设计
-- B2B / SaaS 工作流体验
-- 多状态反馈系统设计
-
-### 可如何在 P0 中展示 / How to Show in P0
-
-- 展示为一张脱敏项目卡
-- 连接到“复杂系统体验拆解能力”和“端到端交互设计交付能力”
-- 用抽象流程图展示关键路径和状态变化
-- 用 before / after 的方式表达体验问题如何被结构化
-
-### 下一步最小行动 / Next Small Action
-
-画出一条脱敏通信任务路径，并标出 3 个关键状态：进行中、成功、失败。
+当前内容全部使用脱敏、抽象表达，不包含公司敏感信息、内部数据来源、同事姓名或未公开细节。
 
 ---
 
-## Card 02 — 智能信息处理体验 / Intelligent Information Processing Experience
+## Y2022 — B 端 UX 起点：复杂业务理解与结构化设计
 
-### 项目代号 / Project Code Name
+### 年份 / Year
 
-Project Insight Lens / 信息洞察镜
+2022
 
-### 项目类型 / Project Type
+### 所属 P0 层级 / P0 Layer
 
-智能信息处理体验 / Intelligent information processing experience
+Career Capability Layer / 职业能力层
 
-### 背景问题 / Problem Context
+### 年度主题 / Year Theme
 
-当信息量变大时，用户真正需要的不只是更多内容，而是更清楚的筛选、理解、归纳和行动建议。智能信息处理体验关注如何帮助用户从复杂信息中看到重点，并减少重复判断和认知负担。
+B 端 UX 起点：复杂业务理解与结构化设计 / B-side UX foundation: complex business understanding and structured design
 
-该项目方向不涉及具体内部数据或真实业务来源，只抽象讨论信息处理体验中的通用问题：如何组织信息、如何呈现重点、如何解释结果、如何让用户保持控制感。
+### 代表项目簇 / Project Clusters
+
+- B 端业务体验 / B-side business UX
+- 复杂流程与信息结构 / Complex workflow and information structure
+- 任务链路与交付协作 / Task flow and delivery collaboration
 
 ### 我的角色 / My Role
 
-作为体验设计参与者，负责把模糊的信息处理需求转化为用户场景、信息结构、交互流程和可理解的界面表达。
+以体验设计参与者身份进入复杂业务场景，学习从业务规则、用户任务、流程结构和交付约束中拆解设计问题，并将模糊需求转化为可讨论、可交付的体验方案。
 
 ### 关键设计动作 / Key Design Actions
 
-- 梳理信息输入、处理、输出路径 / Input-process-output flow mapping
-- 定义用户需要看见的重点信息 / Key information framing
-- 设计结果解释和用户确认机制 / Explanation and confirmation design
-- 平衡自动化效率与用户控制感 / Automation-control balance
-- 整理脱敏方案逻辑和设计依据 / Sanitized design rationale
+- 拆解复杂业务流程和用户任务链路。
+- 梳理信息架构、页面结构和关键操作路径。
+- 将业务规则转化为用户可理解的界面逻辑。
+- 输出原型、说明文档和脱敏设计交付材料。
+- 建立从需求理解到方案表达的基础工作方式。
 
-### 体现的能力 / Capabilities Demonstrated
+### 可见产出 / Visible Outputs
 
-- 用户洞察与体验指标转化能力
-- AI-native 产品想象与系统搭建能力
-- 信息架构与内容组织能力
-- 复杂流程抽象能力
+- 脱敏流程图 / Sanitized flow maps
+- 信息架构草图 / Information architecture sketches
+- 任务链路说明 / Task flow notes
+- 原型方案 / Prototypes
+- 交互说明 / Interaction specifications
 
-### 可迁移方向 / Transferable Directions
+### 能力增长 / Capability Growth
 
-- AI 信息助手
-- 智能摘要和信息筛选工具
-- 知识管理产品
-- 内容创作辅助工具
-- Agent 工作流设计
+- C01 复杂业务与系统体验拆解能力
+- C02 信息架构与任务链路设计能力
+- C04 系统入口与硬件交互设计能力
 
-### 可如何在 P0 中展示 / How to Show in P0
+### 证据类型 / Evidence Types
 
-- 展示为“信息从混乱到清晰”的项目卡
-- 用脱敏信息流图说明输入、处理和输出关系
-- 连接到 P2 AI Product Lab 的未来产品实验
-- 展示用户控制感如何被纳入智能体验设计
+- flow_map
+- information_architecture
+- prototype
+- interaction_spec
+- design_reflection
 
-### 下一步最小行动 / Next Small Action
+### 可展示方式 / How to Visualize
 
-选一个脱敏信息处理场景，写出它的输入、处理、输出和用户确认点。
+在 P0 / Career Capability Layer 中展示为 2022 年起点节点，用“复杂业务 -> 结构化流程 -> 可交付方案”的路径呈现能力萌芽。
+
+### 可持续更新字段 / Updatable Fields
+
+```yaml
+year: 2022
+year_theme: B-side UX foundation
+project_clusters: [B-side business UX, complex workflow, task flow]
+capability_ids: [C01, C02, C04]
+p0_layer: Career Capability Layer
+evidence_types: [flow_map, information_architecture, prototype, interaction_spec, design_reflection]
+visibility_level: medium
+impact_level: foundation
+update_status: draft
+relation_to_other_p0_layers: Can later connect to AI Product Lab Layer through B-side AI tools and workflow products.
+```
+
+### 关联能力编号 / Related Capability IDs
+
+C01, C02, C04
 
 ---
 
-## Card 03 — 多设备协同体验 / Multi-device Collaboration Experience
+## Y2023 — 全场景协同：跨端体验与场景链路理解
 
-### 项目代号 / Project Code Name
+### 年份 / Year
 
-Project Device Bridge / 设备桥接体验
+2023
 
-### 项目类型 / Project Type
+### 所属 P0 层级 / P0 Layer
 
-多设备协同体验 / Multi-device collaboration experience
+Career Capability Layer / 职业能力层
 
-### 背景问题 / Problem Context
+### 年度主题 / Year Theme
 
-当用户在多个设备之间切换任务时，体验问题往往不只发生在单个界面，而发生在设备关系、任务连续性、状态同步、权限理解和场景切换之间。
+全场景协同：跨端体验与场景链路理解 / Cross-scenario collaboration: multi-device journey and context understanding
 
-该项目方向关注多端体验中的通用问题：用户是否知道当前任务在哪个设备上继续、设备之间如何建立关系、状态如何被解释、失败或中断时如何恢复。
+### 代表项目簇 / Project Clusters
+
+- 全场景协同体验 / Cross-scenario collaboration UX
+- 服务互通与跨端链路 / Service continuity and cross-device flow
+- 关爱与场景化体验 / Care-related and contextual UX
 
 ### 我的角色 / My Role
 
-作为体验设计参与者，负责理解多设备使用场景，拆解跨端任务路径，并将复杂设备关系转化为用户可理解的交互方案。
+参与跨设备、跨服务和多场景体验设计，理解用户任务如何在不同设备、不同空间和不同状态中流转，并将系统能力转化为更连续、更清楚的体验路径。
 
 ### 关键设计动作 / Key Design Actions
 
-- 绘制跨设备任务路径 / Cross-device journey mapping
-- 梳理设备连接、切换、同步和异常状态 / Connection and sync state mapping
-- 定义用户在不同端看到的信息差异 / Platform-specific information design
-- 优化设备关系和状态反馈 / Device relationship feedback
-- 整理脱敏多端体验说明 / Sanitized multi-platform design notes
+- 梳理跨端任务链路和场景触发条件。
+- 拆解设备之间的服务互通关系。
+- 设计不同端上的状态反馈、入口和操作延续。
+- 参与场景化体验方案和交付协作。
+- 沉淀跨端体验理解和系统级视角。
 
-### 体现的能力 / Capabilities Demonstrated
+### 可见产出 / Visible Outputs
 
-- 多端/多场景体验理解能力
-- 复杂系统体验拆解能力
-- 端到端交互设计交付能力
-- 状态与权限体验设计能力
+- 跨端链路图 / Cross-device flow maps
+- 场景矩阵 / Scenario matrices
+- 服务互通说明 / Service continuity notes
+- 脱敏方案稿 / Sanitized design proposals
+- 团队协作交付记录 / Delivery collaboration records
 
-### 可迁移方向 / Transferable Directions
+### 能力增长 / Capability Growth
 
-- 跨端产品设计
-- 智能设备生态体验
-- 多端 AI 工具
-- 协作系统和任务连续性设计
-- 桌面端、移动端和可穿戴设备体验
+- C01 复杂业务与系统体验拆解能力
+- C03 多端多场景协同体验理解能力
+- C02 信息架构与任务链路设计能力
 
-### 可如何在 P0 中展示 / How to Show in P0
+### 证据类型 / Evidence Types
 
-- 用多设备场景矩阵展示任务如何跨端流转
-- 连接到“多端/多场景体验理解能力”能力卡
-- 用抽象图示表达设备关系和任务连续性
-- 作为未来 P2 多端 AI 产品实验的基础案例
+- cross_device_flow
+- scenario_matrix
+- service_continuity
+- design_solution
+- delivery_record
 
-### 下一步最小行动 / Next Small Action
+### 可展示方式 / How to Visualize
 
-选一个跨设备任务，写出它在设备 A、设备 B 和中断恢复状态下分别需要显示什么。
+在 P0 / Career Capability Layer 中展示为从单一业务流程走向多端系统体验的转折节点，用设备、场景、服务、状态之间的关系图呈现能力扩展。
+
+### 可持续更新字段 / Updatable Fields
+
+```yaml
+year: 2023
+year_theme: Cross-scenario collaboration
+project_clusters: [cross-scenario UX, service continuity, contextual UX]
+capability_ids: [C01, C03, C02]
+p0_layer: Career Capability Layer
+evidence_types: [cross_device_flow, scenario_matrix, service_continuity, design_solution, delivery_record]
+visibility_level: medium
+impact_level: growth
+update_status: draft
+relation_to_other_p0_layers: Can later connect to What-if Expression Layer through future multi-device living scenarios.
+```
+
+### 关联能力编号 / Related Capability IDs
+
+C01, C03, C02
 
 ---
 
-## Card 04 — 系统工具与设置体验 / System Tools and Settings Experience
+## Y2024 — 智控键 + 全场景协同：系统入口、硬件交互与多场景联动
 
-### 项目代号 / Project Code Name
+### 年份 / Year
 
-Project Control Panel / 控制面板体验
+2024
 
-### 项目类型 / Project Type
+### 所属 P0 层级 / P0 Layer
 
-系统工具与设置体验 / System tools and settings experience
+Career Capability Layer / 职业能力层
 
-### 背景问题 / Problem Context
+### 年度主题 / Year Theme
 
-系统工具和设置体验通常承载大量功能、权限、状态和用户选择。它们看似是辅助功能，但会直接影响用户是否理解系统、是否敢于操作、是否能在出错时恢复。
+智控键 + 全场景协同：系统入口、硬件交互与多场景联动 / Smart control key and cross-scenario UX: system entry, hardware interaction, and scenario orchestration
 
-该项目方向关注如何让复杂设置更清晰、可控、可预期，并帮助用户在不同熟悉程度下完成配置、理解影响和做出选择。
+### 代表项目簇 / Project Clusters
+
+- 智控键体验 / Smart control key UX
+- 系统入口与硬件交互 / System entry and hardware interaction
+- 全场景协同与多任务创新 / Cross-scenario collaboration and multi-task innovation
+- 卫星与跨场景通信体验 / Satellite and cross-context communication UX
 
 ### 我的角色 / My Role
 
-作为体验设计参与者，负责梳理设置项结构、用户决策路径、状态说明和异常提示，让复杂工具更容易被理解和使用。
+围绕系统级入口、硬件触发、场景联动和跨端体验参与方案设计，将抽象系统能力转化为用户可感知的入口、反馈、状态和操作路径。
 
 ### 关键设计动作 / Key Design Actions
 
-- 梳理设置项层级和信息架构 / Settings information architecture
-- 定义关键开关、权限和状态说明 / Toggle, permission, and status design
-- 优化用户决策路径 / Decision flow refinement
-- 设计风险提示、确认和恢复机制 / Warning, confirmation, and recovery design
-- 整理脱敏设计规范和交互说明 / Sanitized design specification
+- 拆解硬件入口与系统能力之间的映射关系。
+- 设计触发、反馈、状态变化和异常提示。
+- 参与全场景协同、卫星相关和多任务创新方向的体验方案。
+- 将复杂场景联动整理为用户可理解的任务路径。
+- 参与创新 workshop，沉淀可延展的方案思路。
 
-### 体现的能力 / Capabilities Demonstrated
+### 可见产出 / Visible Outputs
 
-- 复杂系统体验拆解能力
-- 信息架构设计能力
-- 端到端交互设计交付能力
-- 用户洞察与体验指标转化能力
+- 系统入口方案 / System entry concepts
+- 硬件交互逻辑 / Hardware interaction logic
+- 跨场景体验方案 / Cross-scenario UX proposals
+- 创新 workshop 产出 / Workshop outputs
+- 脱敏交付记录 / Sanitized delivery records
 
-### 可迁移方向 / Transferable Directions
+### 能力增长 / Capability Growth
 
-- 后台系统和管理工具
-- AI 工具设置与权限管理
-- SaaS 配置体验
-- Design system 组件规范
-- 复杂功能的渐进式引导
+- C03 多端多场景协同体验理解能力
+- C04 系统入口与硬件交互设计能力
+- C08 创新方案抽象、专利化与 AI-native 工作流能力
 
-### 可如何在 P0 中展示 / How to Show in P0
+### 证据类型 / Evidence Types
 
-- 展示脱敏设置架构图
-- 用“功能复杂度如何被整理成可理解选择”的方式展示项目价值
-- 连接到复杂系统拆解和信息架构能力
-- 展示关键状态、权限和异常处理样例
+- system_entry_design
+- hardware_interaction_logic
+- scenario_matrix
+- workshop_output
+- delivery_record
+- innovation_concept
 
-### 下一步最小行动 / Next Small Action
+### 可展示方式 / How to Visualize
 
-选择一个抽象设置场景，列出 5 个设置项，并按用户理解顺序重新分组。
+在 P0 / Career Capability Layer 中展示为“系统入口能力”成长节点，用“硬件触发 -> 系统反馈 -> 场景联动 -> 多端延续”的链路呈现。
+
+### 可持续更新字段 / Updatable Fields
+
+```yaml
+year: 2024
+year_theme: System entry and cross-scenario orchestration
+project_clusters: [smart control key, system entry, hardware interaction, cross-scenario collaboration]
+capability_ids: [C03, C04, C08]
+p0_layer: Career Capability Layer
+evidence_types: [system_entry_design, hardware_interaction_logic, scenario_matrix, workshop_output, delivery_record, innovation_concept]
+visibility_level: medium
+impact_level: high
+update_status: draft
+relation_to_other_p0_layers: Can later connect to AI Product Lab Layer through AI shortcuts, personal agents, and hardware-triggered workflows.
+```
+
+### 关联能力编号 / Related Capability IDs
+
+C03, C04, C08
 
 ---
 
-## Card 05 — AI-native 创新方案探索 / AI-native Innovation Exploration
+## Y2025 — 设置 + 音量条 + 畅连承接：系统基础体验与通信体验过渡
 
-### 项目代号 / Project Code Name
+### 年份 / Year
 
-Project Atlas Agent / 地图型 Agent 探索
+2025
 
-### 项目类型 / Project Type
+### 所属 P0 层级 / P0 Layer
 
-AI-native 创新方案探索 / AI-native innovation exploration
+Career Capability Layer / 职业能力层
 
-### 背景问题 / Problem Context
+### 年度主题 / Year Theme
 
-AI-native 产品不只是把 AI 放进现有界面，而是重新思考用户、系统、任务、内容和反馈之间的关系。AI 可以成为工具、协作者、解释器、分类器、生成器或个人项目经理。
+设置 + 音量条 + 畅连承接：系统基础体验与通信体验过渡 / Settings, volume control, and communication transition: foundation UX to communication UX
 
-该项目方向关注如何把 AI 想象转化为可执行的系统：从想法捕获，到分类、生成、检查、沉淀，再到未来可视化能力地图。
+### 代表项目簇 / Project Clusters
+
+- 手机与 PC 设置体验 / Mobile and PC settings UX
+- 系统工具与音量条体验 / System tools and volume control UX
+- 畅连与 D2D 无网通信承接 / Communication and D2D offline communication transition
+- 基础体验治理与落地跟进 / Foundation UX refinement and delivery follow-up
 
 ### 我的角色 / My Role
 
-作为系统设计和体验设计参与者，负责定义 AI 在工作流中的角色，拆解任务闭环，并将抽象想法变成草稿、流程、原型或可持续迭代的个人系统。
+顺利交接并负责部分设置、系统工具、音量条和通信相关体验，独立承担部分模块从需求理解、竞品分析、信息架构、原型方案到开发落地跟进的端到端交付。
 
 ### 关键设计动作 / Key Design Actions
 
-- 定义 AI 的角色和边界 / AI role and boundary definition
-- 搭建想法捕获到执行的闭环 / Idea-to-execution loop
-- 设计 P0-P5 分类和输入关系 / P0-P5 classification model
-- 生成脱敏草稿、能力卡和项目卡 / Sanitized draft generation
-- 建立用户检查 diff 后再提交的工作方式 / Human review before commit
+- 梳理设置项、系统工具和基础交互的信息结构。
+- 完成部分模块的竞品分析、原型方案和交互说明。
+- 打磨音量条、系统状态、反馈和多端适配细节。
+- 承接通信体验相关工作，理解 D2D 无网通信场景。
+- 将体验指标、卖点特性和设计动作建立连接。
 
-### 体现的能力 / Capabilities Demonstrated
+### 可见产出 / Visible Outputs
 
-- AI-native 产品想象与系统搭建能力
-- 复杂系统体验拆解能力
-- 创新方案抽象与专利化能力
-- 个人知识系统设计能力
-- Agent 工作流设计能力
+- 设置体验方案 / Settings UX proposals
+- 系统工具和音量条交互方案 / System tool and volume interaction proposals
+- 竞品分析与信息架构 / Competitive analysis and information architecture
+- D2D 无网通信体验承接记录 / D2D offline communication transition records
+- 体验指标提升与激励记录 / Experience metric improvement and recognition records
 
-### 可迁移方向 / Transferable Directions
+### 能力增长 / Capability Growth
 
-- AI 产品原型
-- Agent Workbench
-- AI-native portfolio
-- 个人自动化系统
-- 创作和知识管理工具
-- P2 AI Product Lab 实验
+- C05 系统基础体验治理与细节打磨能力
+- C06 通信与无网场景体验设计能力
+- C02 信息架构与任务链路设计能力
+- C01 复杂业务与系统体验拆解能力
 
-### 可如何在 P0 中展示 / How to Show in P0
+### 证据类型 / Evidence Types
 
-- 展示为 P0 与 P1/P2 之间的桥接项目卡
-- 用流程图展示想法如何进入系统、被分类、被执行、被检查和沉淀
-- 连接到 What-if 表达卡、能力卡和执行闭环草稿
-- 展示 Tina 如何把 AI 作为系统组件来设计，而不仅是单点工具
+- settings_ux
+- system_tool_design
+- competitive_analysis
+- information_architecture
+- prototype
+- metrics
+- recognition
+- delivery_record
 
-### 下一步最小行动 / Next Small Action
+### 可展示方式 / How to Visualize
 
-画一张最小系统图：想法进入 Codex App 后，如何变成 drafts、docs、Issue 或 P0 卡片。
+在 P0 / Career Capability Layer 中展示为“从系统基础体验到通信体验”的过渡节点，用双线结构呈现：一条是设置/工具/音量条的基础体验治理，一条是畅连/D2D 的通信竞争力承接。
+
+### 可持续更新字段 / Updatable Fields
+
+```yaml
+year: 2025
+year_theme: Foundation UX and communication transition
+project_clusters: [settings UX, system tools, volume control, D2D offline communication]
+capability_ids: [C05, C06, C02, C01]
+p0_layer: Career Capability Layer
+evidence_types: [settings_ux, system_tool_design, competitive_analysis, information_architecture, prototype, metrics, recognition, delivery_record]
+visibility_level: high
+impact_level: high
+update_status: draft
+relation_to_other_p0_layers: Can later connect to Content & Personal Brand Layer through a story about moving from foundation UX to communication competitiveness.
+```
+
+### 关联能力编号 / Related Capability IDs
+
+C05, C06, C02, C01
+
+---
+
+## Y2026 — 畅连 + 短信/信息：通信竞争力与智能化信息体验
+
+### 年份 / Year
+
+2026
+
+### 所属 P0 层级 / P0 Layer
+
+Career Capability Layer / 职业能力层
+
+### 年度主题 / Year Theme
+
+畅连 + 短信/信息：通信竞争力与智能化信息体验 / Communication competitiveness and intelligent information experience
+
+### 代表项目簇 / Project Clusters
+
+- 畅连与无网组网体验 / Communication and offline networking UX
+- 短信/信息体验优化 / Message and information UX optimization
+- 智能信息处理与提醒策略 / Intelligent information processing and reminder strategy
+- 创新方案、专利化表达与 AI-native 工作流 / Innovation, patent framing, and AI-native workflow
+
+### 我的角色 / My Role
+
+持续推进通信竞争力和智能化信息体验，围绕无网组网、对讲、找人、重要信息提取、结构化呈现、强提醒联动、优先面板等方向输出方案，并将创新方案、专利思路和 AI-native 工作流纳入 P0 职业能力层的数据源。
+
+### 关键设计动作 / Key Design Actions
+
+- 推进 D2D 二期无网组网相关体验方案。
+- 围绕对讲、找人等卖点特性输出用户可感知方案。
+- 参与短信/信息智能化体验优化和相关交付。
+- 输出重要信息提取、结构化呈现、强提醒联动、优先面板等方案。
+- 提炼创新方案和专利化表达方向。
+- 用 AI-native 工作流辅助整理项目卡、能力卡和可视化字段。
+
+### 可见产出 / Visible Outputs
+
+- 无网组网、对讲、找人等通信体验方案 / Offline networking and communication UX proposals
+- 智能化短信/信息方案 / Intelligent message UX proposals
+- 短信 NSS 排名改善记录 / Message NSS ranking improvement record
+- 创新方案与专利思路 / Innovation concepts and patent ideas
+- P0 职业能力层结构化数据源 / Structured data source for Career Capability Layer
+
+### 能力增长 / Capability Growth
+
+- C06 通信与无网场景体验设计能力
+- C07 智能信息结构化与提醒策略设计能力
+- C08 创新方案抽象、专利化与 AI-native 工作流能力
+- C01 复杂业务与系统体验拆解能力
+
+### 证据类型 / Evidence Types
+
+- communication_solution
+- offline_networking_flow
+- message_ux
+- intelligent_information_structure
+- reminder_strategy
+- metrics
+- patent_idea
+- innovation_concept
+- ai_native_workflow
+
+### 可展示方式 / How to Visualize
+
+在 P0 / Career Capability Layer 中展示为当前职业能力层的高密度节点，将通信竞争力、智能信息体验、创新方案和 AI-native 工作流连接成 2026 年能力增长中心。
+
+### 可持续更新字段 / Updatable Fields
+
+```yaml
+year: 2026
+year_theme: Communication competitiveness and intelligent information experience
+project_clusters: [communication UX, offline networking, message UX, intelligent information, innovation and AI-native workflow]
+capability_ids: [C06, C07, C08, C01]
+p0_layer: Career Capability Layer
+evidence_types: [communication_solution, offline_networking_flow, message_ux, intelligent_information_structure, reminder_strategy, metrics, patent_idea, innovation_concept, ai_native_workflow]
+visibility_level: high
+impact_level: high
+update_status: active
+relation_to_other_p0_layers: Can later connect to What-if Expression Layer, AI Product Lab Layer, and Content & Personal Brand Layer through AI communication tools and narrative content.
+```
+
+### 关联能力编号 / Related Capability IDs
+
+C06, C07, C08, C01
+
+---
+
+## 年度 -> 项目 -> 能力 -> P0 层级映射表 / Year -> Project -> Capability -> P0 Layer Map
+
+这张表只服务于 P0 / Career Capability Layer / 职业能力层，用于后续生成动态可视化能力地图。它不是 P0 全部，也不覆盖 What-if Expression Layer、AI Product Lab Layer、Content & Personal Brand Layer、Designer Shop / Studio Layer 等其他层。
+
+| year | year_theme | project_clusters | capability_ids | p0_layer | evidence_types | visibility_level | impact_level | update_status | relation_to_other_p0_layers |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 2022 | B 端 UX 起点 | B-side business UX; complex workflow; task flow | C01, C02, C04 | Career Capability Layer | flow_map; information_architecture; prototype; interaction_spec | medium | foundation | draft | 可连接 AI Product Lab Layer 的 B 端 AI 工具和工作流产品想象 |
+| 2023 | 全场景协同 | cross-scenario UX; service continuity; contextual UX | C01, C03, C02 | Career Capability Layer | cross_device_flow; scenario_matrix; service_continuity; design_solution | medium | growth | draft | 可连接 What-if Expression Layer 的未来多设备生活场景 |
+| 2024 | 智控键 + 全场景协同 | smart control key; system entry; hardware interaction; cross-scenario collaboration | C03, C04, C08 | Career Capability Layer | system_entry_design; hardware_interaction_logic; workshop_output; innovation_concept | medium | high | draft | 可连接 AI Product Lab Layer 的快捷入口、个人 Agent 和硬件触发工作流 |
+| 2025 | 设置 + 音量条 + 畅连承接 | settings UX; system tools; volume control; D2D offline communication | C05, C06, C02, C01 | Career Capability Layer | settings_ux; system_tool_design; metrics; recognition; delivery_record | high | high | draft | 可连接 Content & Personal Brand Layer，讲述从基础体验到通信竞争力的成长线 |
+| 2026 | 畅连 + 短信/信息 | communication UX; offline networking; message UX; intelligent information; innovation and AI-native workflow | C06, C07, C08, C01 | Career Capability Layer | communication_solution; message_ux; reminder_strategy; metrics; patent_idea; ai_native_workflow | high | high | active | 可连接 What-if、AI Product Lab、内容品牌等层，发展 AI 通信工具与表达内容 |
