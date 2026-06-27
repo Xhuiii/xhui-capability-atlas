@@ -209,6 +209,38 @@
       border-color: var(--career);
     }
 
+    .entry-grid {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 8px;
+      margin-top: 18px;
+      width: min(820px, 100%);
+    }
+
+    .entry-card {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 9px 10px;
+      border: 2px solid rgba(30,37,33,.12);
+      border-radius: 12px;
+      background:
+        linear-gradient(135deg, rgba(255,255,255,.72), rgba(255,249,238,.74));
+      box-shadow: 3px 3px 0 rgba(30,37,33,.07);
+      color: #344039;
+      font-size: 13px;
+      font-weight: 900;
+      text-align: center;
+      transition: transform .16s ease, box-shadow .16s ease, border-color .16s ease;
+    }
+
+    .entry-card:hover {
+      transform: translate(-1px, -1px);
+      border-color: rgba(45,117,108,.34);
+      box-shadow: 5px 5px 0 rgba(30,37,33,.09), 0 0 18px rgba(45,117,108,.14);
+    }
+
     .route-strip {
       display: grid;
       grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -572,6 +604,7 @@
 
     @media (max-width: 980px) {
       .route-strip,
+      .entry-grid,
       .artifact-grid,
       .horizon-grid,
       .progress-panel {
@@ -626,6 +659,7 @@
       }
 
       .route-strip,
+      .entry-grid,
       .world-grid,
       .artifact-grid,
       .horizon-grid,
@@ -658,6 +692,13 @@
         <div class="hero-actions">
           <a class="btn primary" href="#world">进入世界 / Enter Atlas</a>
           <a class="btn" href="p0-career-capability-map-v0.html">查看 Career District</a>
+        </div>
+        <div class="entry-grid">
+          <a href="./career/" class="entry-card">Career Field / #7</a>
+          <a href="./inspiration/" class="entry-card">Inspiration Stream</a>
+          <a href="./life-rpg/" class="entry-card">Simulation Field / #14</a>
+          <a href="./what-if/" class="entry-card">What-if Field</a>
+          <a href="./ai-lab/" class="entry-card">AI Lab</a>
         </div>
         <div class="route-strip">
           <div class="route-card"><b>Story</b><span>先看到这个人的成长路径。</span></div>
