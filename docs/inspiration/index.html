@@ -193,6 +193,50 @@
       gap: 12px;
     }
 
+    .feed-section {
+      margin-top: 18px;
+      padding: 14px;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      background: rgba(255,249,238,.56);
+      box-shadow: var(--shadow);
+    }
+
+    .feed-header {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 12px;
+      padding: 2px 2px 0;
+    }
+
+    .feed-header h3 {
+      margin: 0;
+      font-size: clamp(22px, 3vw, 30px);
+    }
+
+    .feed-header p {
+      margin: 5px 0 0;
+      color: var(--muted);
+    }
+
+    .feed-label {
+      display: inline-flex;
+      align-items: center;
+      min-height: 28px;
+      padding: 4px 9px;
+      border-radius: 999px;
+      color: #fff;
+      background: var(--purple);
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    .feed-label.ai {
+      background: var(--blue);
+    }
+
     .seed {
       position: relative;
       min-height: 230px;
@@ -323,6 +367,8 @@
     @media (max-width: 640px) {
       .shell { width: min(100vw - 20px, 1160px); }
       .topline, .section-head { display: block; }
+      .feed-header { display: block; }
+      .feed-label { margin-top: 8px; }
       .filters { margin-top: 10px; }
       .hero { min-height: auto; padding: 18px; }
       .hero-map, .hero::after { display: none; }
@@ -350,17 +396,36 @@
     <section class="section">
       <div class="section-head">
         <div>
-          <h2>Seed Board / 灵感素材板</h2>
-          <p>页面只展示公开摘要，隐藏本地备注。</p>
+          <h2>Seed Filters / 灵感筛选</h2>
+          <p>Human Spark 和 AI Scout 分开展示；筛选只影响各自 feed 内的卡片。</p>
         </div>
       </div>
-      <div class="filters" id="sourceFilters"></div>
       <div class="filters" id="typeFilters" style="margin-top:8px"></div>
       <div class="filters" id="layerFilters" style="margin-top:8px"></div>
     </section>
 
     <section class="section">
-      <div class="board" id="seedBoard"></div>
+      <div class="feed-section">
+        <div class="feed-header">
+          <div>
+            <h3>Human Spark / 我自己迸发的脑洞</h3>
+            <p>来自 Tina 自己的观察、隐喻、产品念头和内容灵感。</p>
+          </div>
+          <span class="feed-label">source: human</span>
+        </div>
+        <div class="board" id="human-spark"></div>
+      </div>
+
+      <div class="feed-section">
+        <div class="feed-header">
+          <div>
+            <h3>AI Scout / AI 灵感侦察员</h3>
+            <p>AI 未来可协助收集和整理素材，但必须人工确认。</p>
+          </div>
+          <span class="feed-label ai">source: ai_scout</span>
+        </div>
+        <div class="board" id="ai-scout"></div>
+      </div>
     </section>
 
     <section class="section">
@@ -390,10 +455,12 @@
   <script src="../../data/p0-living-seeds-v0.js"></script>
   <script>
     const seeds = window.P0_LIVING_SEEDS || [];
-    const state = { source: "all", type: "all", linkedLayer: "all" };
+    const humanSpark = seeds.filter(s => s.source === "human");
+    const aiScout = seeds.filter(s => s.source === "ai_scout");
+    const state = { type: "all", linkedLayer: "all" };
 
-    const board = document.getElementById("seedBoard");
-    const sourceFilters = document.getElementById("sourceFilters");
+    const humanSparkBoard = document.getElementById("human-spark");
+    const aiScoutBoard = document.getElementById("ai-scout");
     const typeFilters = document.getElementById("typeFilters");
     const layerFilters = document.getElementById("layerFilters");
 
@@ -410,7 +477,6 @@
     }
 
     function renderFilters() {
-      makeFilters(sourceFilters, "source", "sources");
       makeFilters(typeFilters, "type", "types");
       makeFilters(layerFilters, "linkedLayer", "layers");
       document.querySelectorAll(".filter").forEach((button) => {
@@ -421,22 +487,21 @@
       });
     }
 
-    function visibleSeeds() {
-      return seeds.filter((seed) => (
-        (state.source === "all" || seed.source === state.source) &&
+    function visibleSeeds(seedList) {
+      return seedList.filter((seed) => (
         (state.type === "all" || seed.type === state.type) &&
         (state.linkedLayer === "all" || seed.linkedLayer === state.linkedLayer)
       ));
     }
 
-    function renderBoard() {
-      const items = visibleSeeds();
+    function renderBoard(target, seedList, emptyText) {
+      const items = visibleSeeds(seedList);
       if (!items.length) {
-        board.innerHTML = `<div class="empty">No seeds match current filters.</div>`;
+        target.innerHTML = `<div class="empty">${emptyText}</div>`;
         return;
       }
 
-      board.innerHTML = items.map((seed) => `
+      target.innerHTML = items.map((seed) => `
         <article class="seed" data-type="${seed.type}">
           <div class="meta">
             <span class="chip">${seed.source}</span>
@@ -452,7 +517,8 @@
 
     function render() {
       renderFilters();
-      renderBoard();
+      renderBoard(humanSparkBoard, humanSpark, "No Human Spark seeds match current filters.");
+      renderBoard(aiScoutBoard, aiScout, "No AI Scout seeds match current filters.");
     }
 
     render();
