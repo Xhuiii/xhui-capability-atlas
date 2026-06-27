@@ -3,163 +3,177 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>P0 Personal Growth World Exhibition</title>
+  <title>P0 Living Pixel Atlas</title>
   <style>
     :root {
-      --paper: #f6f0e3;
-      --paper-2: #fffaf0;
-      --ink: #1e2520;
-      --muted: #657066;
-      --soft: #e8dfd0;
-      --line: rgba(30, 37, 32, 0.14);
-      --green: #2d7468;
-      --moss: #7f8f4f;
-      --clay: #9b6238;
-      --blue: #536f91;
-      --plum: #735f87;
-      --rose: #9b5c69;
-      --shadow: 0 24px 70px rgba(40, 44, 38, 0.14);
-      --radius: 8px;
+      --felt: #f4eddf;
+      --felt-deep: #e6dcc9;
+      --paper: #fff9ee;
+      --ink: #1e2521;
+      --muted: #677168;
+      --line: rgba(30, 37, 33, 0.14);
+      --pixel: rgba(30, 37, 33, 0.055);
+      --career: #2d756c;
+      --sim: #7d8f50;
+      --idea: #755d8e;
+      --ai: #4f7194;
+      --content: #9d5d6b;
+      --studio: #9d6539;
+      --glow: 0 0 0 1px rgba(255,255,255,.62), 0 18px 60px rgba(45,117,108,.18);
+      --shadow: 0 22px 70px rgba(41, 45, 39, 0.13);
+      --radius: 14px;
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
-    html {
-      scroll-behavior: smooth;
-    }
+    html { scroll-behavior: smooth; }
 
     body {
       margin: 0;
       min-height: 100vh;
-      background:
-        radial-gradient(circle at 12% 7%, rgba(45, 116, 104, 0.18), transparent 24%),
-        radial-gradient(circle at 86% 12%, rgba(155, 98, 56, 0.14), transparent 26%),
-        linear-gradient(180deg, #f8f2e6 0%, #f3ecde 48%, #ebe3d5 100%);
       color: var(--ink);
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
       line-height: 1.5;
+      background:
+        radial-gradient(circle at 12% 6%, rgba(45,117,108,.18), transparent 23%),
+        radial-gradient(circle at 82% 10%, rgba(117,93,142,.14), transparent 24%),
+        linear-gradient(var(--pixel) 1px, transparent 1px),
+        linear-gradient(90deg, var(--pixel) 1px, transparent 1px),
+        linear-gradient(180deg, #f8f1e5 0%, var(--felt) 42%, #ece1d0 100%);
+      background-size: auto, auto, 24px 24px, 24px 24px, auto;
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: .28;
+      background-image:
+        radial-gradient(rgba(30,37,33,.13) .55px, transparent .55px);
+      background-size: 5px 5px;
+      mix-blend-mode: multiply;
     }
 
-    button {
-      font: inherit;
-    }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; }
 
     .shell {
       width: min(1180px, calc(100vw - 28px));
       margin: 0 auto;
-      padding: 22px 0 44px;
+      padding: 18px 0 44px;
     }
 
-    .topbar {
+    .topline {
       display: flex;
-      align-items: center;
       justify-content: space-between;
-      gap: 16px;
-      margin-bottom: 14px;
+      gap: 14px;
+      align-items: center;
+      margin-bottom: 12px;
       color: var(--muted);
       font-size: 13px;
     }
 
-    .route {
+    .path {
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
     }
 
-    .route a {
-      padding: 6px 9px;
+    .path a {
+      min-height: 28px;
+      padding: 4px 9px;
       border: 1px solid var(--line);
       border-radius: 999px;
-      background: rgba(255, 250, 240, 0.62);
-      font-weight: 700;
+      background: rgba(255,249,238,.64);
+      font-weight: 800;
     }
 
     .hero {
       position: relative;
+      min-height: 540px;
       overflow: hidden;
-      min-height: 520px;
-      padding: 38px;
       border: 1px solid var(--line);
-      border-radius: var(--radius);
+      border-radius: 22px;
       background:
-        linear-gradient(120deg, rgba(255, 250, 240, 0.98), rgba(236, 231, 216, 0.92)),
-        var(--paper-2);
+        linear-gradient(135deg, rgba(255,249,238,.98), rgba(235,226,208,.9)),
+        var(--paper);
       box-shadow: var(--shadow);
     }
 
     .hero::before {
       content: "";
       position: absolute;
-      inset: auto 28px 26px auto;
-      width: min(48vw, 520px);
-      aspect-ratio: 1.2;
-      border: 1px solid rgba(45, 116, 104, 0.2);
-      border-radius: 44% 56% 47% 53%;
+      right: clamp(10px, 4vw, 46px);
+      bottom: clamp(20px, 5vw, 44px);
+      width: min(48vw, 500px);
+      aspect-ratio: 1.16;
+      border: 2px solid rgba(30,37,33,.11);
+      border-radius: 35% 65% 42% 58%;
       background:
-        radial-gradient(circle at 24% 56%, rgba(45, 116, 104, 0.22), transparent 16%),
-        radial-gradient(circle at 52% 30%, rgba(127, 143, 79, 0.20), transparent 15%),
-        radial-gradient(circle at 74% 64%, rgba(83, 111, 145, 0.18), transparent 16%),
-        linear-gradient(rgba(30, 37, 32, 0.035) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(30, 37, 32, 0.035) 1px, transparent 1px);
-      background-size: auto, auto, auto, 22px 22px, 22px 22px;
-      opacity: 0.92;
+        radial-gradient(circle at 28% 38%, rgba(45,117,108,.25), transparent 14%),
+        radial-gradient(circle at 56% 24%, rgba(117,93,142,.18), transparent 13%),
+        radial-gradient(circle at 72% 62%, rgba(79,113,148,.18), transparent 14%),
+        radial-gradient(circle at 42% 72%, rgba(157,101,57,.16), transparent 13%),
+        linear-gradient(rgba(30,37,33,.045) 2px, transparent 2px),
+        linear-gradient(90deg, rgba(30,37,33,.045) 2px, transparent 2px);
+      background-size: auto, auto, auto, auto, 28px 28px, 28px 28px;
+      image-rendering: pixelated;
       transform: rotate(-4deg);
+      box-shadow: inset 0 0 40px rgba(255,255,255,.55);
     }
 
     .hero::after {
-      content: "World Map / 小世界地图";
+      content: "Living Pixel Atlas";
       position: absolute;
-      right: 46px;
-      bottom: 34px;
-      color: rgba(30, 37, 32, 0.38);
+      right: clamp(30px, 7vw, 96px);
+      bottom: clamp(34px, 7vw, 82px);
+      color: rgba(30,37,33,.36);
+      font-weight: 900;
       font-size: 13px;
-      font-weight: 800;
     }
 
     .hero-copy {
       position: relative;
       z-index: 1;
       width: min(760px, 100%);
+      padding: clamp(22px, 5vw, 48px);
     }
 
     .eyebrow {
       margin: 0 0 14px;
-      color: var(--green);
+      color: var(--career);
       font-size: 13px;
-      font-weight: 900;
-      letter-spacing: 0;
+      font-weight: 950;
       text-transform: uppercase;
+      letter-spacing: 0;
     }
 
     h1 {
       margin: 0;
-      max-width: 790px;
-      font-size: clamp(42px, 7.4vw, 84px);
-      line-height: 0.96;
+      max-width: 820px;
+      font-size: clamp(42px, 7.6vw, 88px);
+      line-height: .95;
       letter-spacing: 0;
     }
 
     .subtitle {
-      max-width: 760px;
-      margin: 20px 0 0;
-      color: #455047;
-      font-size: clamp(18px, 2.2vw, 24px);
+      max-width: 700px;
+      margin: 18px 0 0;
+      color: #455048;
+      font-size: clamp(18px, 2.1vw, 23px);
     }
 
-    .story-line {
-      margin-top: 24px;
+    .story-card {
+      width: min(680px, 100%);
+      margin-top: 22px;
       padding: 16px;
-      border-left: 4px solid var(--green);
-      background: rgba(255, 255, 255, 0.52);
+      border: 1px solid rgba(45,117,108,.22);
+      border-left: 6px solid var(--career);
       border-radius: 0 var(--radius) var(--radius) 0;
-      color: #37423b;
+      background: rgba(255,255,255,.58);
+      backdrop-filter: blur(6px);
+      color: #39443d;
       font-size: 17px;
     }
 
@@ -167,71 +181,75 @@
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
-      margin-top: 28px;
+      margin-top: 24px;
     }
 
-    .action {
+    .btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
       min-height: 44px;
       padding: 10px 14px;
-      border-radius: var(--radius);
-      border: 1px solid var(--line);
+      border: 2px solid rgba(30,37,33,.12);
+      border-radius: 12px;
       background: #fff;
-      font-weight: 850;
+      font-weight: 900;
+      box-shadow: 4px 4px 0 rgba(30,37,33,.08);
+      transition: transform .16s ease, box-shadow .16s ease, border-color .16s ease;
     }
 
-    .action.primary {
-      border-color: var(--green);
-      background: var(--green);
+    .btn:hover {
+      transform: translate(-1px, -1px);
+      box-shadow: 6px 6px 0 rgba(30,37,33,.10), 0 0 22px rgba(45,117,108,.14);
+    }
+
+    .btn.primary {
       color: #fff;
+      background: var(--career);
+      border-color: var(--career);
     }
 
-    .journey-strip {
+    .route-strip {
       display: grid;
       grid-template-columns: repeat(4, minmax(0, 1fr));
       gap: 10px;
-      margin-top: 18px;
+      margin-top: 16px;
     }
 
-    .journey-step {
-      min-height: 78px;
+    .route-card {
       padding: 12px;
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      background: rgba(255, 250, 240, 0.76);
+      border: 1px dashed rgba(30,37,33,.18);
+      border-radius: 12px;
+      background: rgba(255,249,238,.72);
     }
 
-    .journey-step b {
+    .route-card b {
       display: block;
-      color: var(--green);
+      color: var(--career);
       font-size: 13px;
       text-transform: uppercase;
     }
 
-    .journey-step span {
+    .route-card span {
       display: block;
       margin-top: 5px;
       color: var(--muted);
       font-size: 13px;
     }
 
-    .section {
-      margin-top: 26px;
-    }
+    .section { margin-top: 28px; }
 
     .section-head {
       display: flex;
       align-items: end;
       justify-content: space-between;
-      gap: 18px;
+      gap: 16px;
       margin-bottom: 14px;
     }
 
     h2 {
       margin: 0;
-      font-size: 28px;
+      font-size: clamp(24px, 3vw, 34px);
       letter-spacing: 0;
     }
 
@@ -251,77 +269,54 @@
       padding: 7px 11px;
       border: 1px solid var(--line);
       border-radius: 999px;
-      background: rgba(255, 250, 240, 0.86);
+      background: rgba(255,249,238,.9);
       color: var(--ink);
       cursor: pointer;
-      font-weight: 850;
+      font-weight: 900;
+      transition: transform .16s ease, background .16s ease;
     }
+
+    .switch:hover { transform: translateY(-1px); }
 
     .switch.active {
-      border-color: var(--green);
-      background: var(--green);
       color: #fff;
+      background: var(--career);
+      border-color: var(--career);
     }
 
-    .view-panel {
-      padding: 0;
-    }
-
-    .world-gallery {
+    .world-grid {
       display: grid;
       grid-template-columns: repeat(6, minmax(0, 1fr));
-      grid-template-rows: repeat(2, minmax(230px, auto));
+      grid-auto-rows: minmax(210px, auto);
       gap: 12px;
     }
 
-    .world-region {
+    .region {
       position: relative;
-      display: flex;
-      min-height: 260px;
       overflow: hidden;
-      padding: 18px;
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      background: var(--paper-2);
+      border: 2px solid rgba(30,37,33,.12);
+      border-radius: 18px;
+      background: rgba(255,249,238,.88);
       box-shadow: var(--shadow);
-      transition: transform 0.18s ease, box-shadow 0.18s ease;
+      transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
     }
 
-    .world-region:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 30px 72px rgba(40, 44, 38, 0.18);
+    .region:hover {
+      transform: translateY(-4px) scale(1.01);
+      box-shadow: var(--glow);
+      border-color: rgba(45,117,108,.35);
     }
 
-    .world-region::after {
-      content: attr(data-mark);
+    .region::after {
+      content: attr(data-icon);
       position: absolute;
       right: 12px;
-      bottom: -14px;
-      color: rgba(30, 37, 32, 0.055);
-      font-size: 92px;
+      bottom: -12px;
+      color: rgba(30,37,33,.06);
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+      font-size: 86px;
+      font-weight: 900;
       line-height: 1;
-      font-weight: 950;
-    }
-
-    .region-career {
-      grid-column: span 3;
-      background:
-        linear-gradient(135deg, rgba(45, 116, 104, 0.14), transparent),
-        var(--paper-2);
-    }
-
-    .region-life {
-      grid-column: span 3;
-      background:
-        linear-gradient(135deg, rgba(127, 143, 79, 0.16), transparent),
-        var(--paper-2);
-    }
-
-    .region-idea,
-    .region-ai,
-    .region-content,
-    .region-studio {
-      grid-column: span 1.5;
     }
 
     .region-inner {
@@ -330,7 +325,18 @@
       display: flex;
       min-height: 100%;
       flex-direction: column;
+      padding: 16px;
     }
+
+    .wide { grid-column: span 3; }
+    .small { grid-column: span 1.5; }
+
+    .career { background: linear-gradient(135deg, rgba(45,117,108,.18), rgba(255,249,238,.92)); }
+    .sim { background: linear-gradient(135deg, rgba(127,143,80,.18), rgba(255,249,238,.92)); }
+    .idea { background: linear-gradient(135deg, rgba(117,93,142,.16), rgba(255,249,238,.92)); }
+    .ai { background: linear-gradient(135deg, rgba(79,113,148,.16), rgba(255,249,238,.92)); }
+    .content { background: linear-gradient(135deg, rgba(157,93,107,.16), rgba(255,249,238,.92)); }
+    .studio { background: linear-gradient(135deg, rgba(157,101,57,.16), rgba(255,249,238,.92)); }
 
     .region-top {
       display: flex;
@@ -339,114 +345,208 @@
       gap: 10px;
     }
 
-    .status {
+    .tag {
       display: inline-flex;
-      min-height: 26px;
       align-items: center;
+      min-height: 26px;
       padding: 3px 8px;
       border-radius: 999px;
       color: #fff;
       font-size: 12px;
-      font-weight: 850;
+      font-weight: 900;
     }
 
-    .status.formed { background: var(--green); }
-    .status.growing { background: var(--moss); }
-    .status.imagining { background: var(--plum); }
-    .status.experimenting { background: var(--blue); }
-    .status.expressing { background: var(--rose); }
-    .status.future { background: var(--clay); }
+    .formed { background: var(--career); }
+    .building { background: var(--sim); }
+    .planned { background: var(--blue); }
+    .backlog { background: var(--studio); }
+    .dreaming { background: var(--idea); }
+    .signal { background: var(--content); }
 
-    .region-code {
+    .code {
       color: var(--muted);
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
       font-size: 12px;
-      font-weight: 850;
+      font-weight: 900;
     }
 
-    .world-region h3 {
-      margin: 18px 0 10px;
+    .region h3 {
+      margin: 18px 0 8px;
       font-size: 24px;
       line-height: 1.12;
     }
 
-    .world-region p {
+    .region p {
       margin: 0;
       color: var(--muted);
       font-size: 14px;
     }
 
-    .meaning {
-      margin-top: 14px;
-      padding: 12px;
-      border: 1px solid rgba(30, 37, 32, 0.11);
-      border-radius: var(--radius);
-      background: rgba(255, 255, 255, 0.52);
+    .reveal {
+      max-height: 0;
+      margin-top: 0;
+      opacity: 0;
+      overflow: hidden;
+      transition: max-height .22s ease, opacity .22s ease, margin .22s ease;
     }
 
-    .meaning b {
-      display: block;
-      margin-bottom: 5px;
-      font-size: 12px;
-      text-transform: uppercase;
-      color: #3b463f;
+    .region:hover .reveal,
+    .region:focus-within .reveal,
+    .artifact:hover .reveal {
+      max-height: 140px;
+      margin-top: 12px;
+      opacity: 1;
     }
 
-    .region-entry {
+    .reveal-box {
+      padding: 10px;
+      border: 1px solid rgba(30,37,33,.12);
+      border-radius: 12px;
+      background: rgba(255,255,255,.58);
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .enter {
       display: inline-flex;
       margin-top: auto;
       padding-top: 16px;
-      color: var(--green);
+      color: var(--career);
       font-weight: 950;
     }
 
-    .artifacts {
+    .panel {
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: rgba(255,249,238,.86);
+      box-shadow: var(--shadow);
+      padding: 16px;
+    }
+
+    .story-panel,
+    .system-panel,
+    .progress-panel {
       display: grid;
+      gap: 10px;
+    }
+
+    .story-beat,
+    .system-row,
+    .progress-card {
+      padding: 14px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: rgba(255,255,255,.66);
+    }
+
+    .story-beat b,
+    .system-row b {
+      display: block;
+      margin-bottom: 4px;
+      color: var(--career);
+    }
+
+    .story-beat span,
+    .system-row span,
+    .progress-card span {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .progress-panel {
       grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .progress-card b {
+      display: block;
+      color: var(--career);
+      font-size: 25px;
+    }
+
+    .bar {
+      height: 8px;
+      margin-top: 12px;
+      overflow: hidden;
+      border-radius: 999px;
+      background: #ded6c6;
+    }
+
+    .bar i {
+      display: block;
+      height: 100%;
+      border-radius: inherit;
+      background: var(--career);
+    }
+
+    .artifact-grid,
+    .stream-grid,
+    .horizon-grid {
+      display: grid;
       gap: 12px;
     }
 
-    .artifact-card {
+    .artifact-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    .stream-grid { grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr); }
+    .horizon-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+
+    .artifact,
+    .stream-card,
+    .horizon-card {
       position: relative;
-      min-height: 220px;
+      min-height: 190px;
       overflow: hidden;
-      padding: 18px;
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      background:
-        linear-gradient(180deg, rgba(255, 250, 240, 0.96), rgba(236, 231, 216, 0.78)),
-        var(--paper-2);
+      padding: 16px;
+      border: 2px solid rgba(30,37,33,.11);
+      border-radius: 18px;
+      background: rgba(255,249,238,.88);
       box-shadow: var(--shadow);
+      transition: transform .18s ease, box-shadow .18s ease;
     }
 
-    .artifact-card::before {
+    .artifact:hover,
+    .stream-card:hover,
+    .horizon-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--glow);
+    }
+
+    .artifact::before {
       content: "";
       position: absolute;
-      inset: 12px 12px auto auto;
-      width: 44px;
-      height: 44px;
-      border: 1px solid rgba(45, 116, 104, 0.22);
-      border-radius: 50%;
-      background: rgba(45, 116, 104, 0.08);
+      right: 14px;
+      top: 14px;
+      width: 38px;
+      height: 38px;
+      border: 2px solid rgba(45,117,108,.18);
+      border-radius: 9px;
+      background:
+        linear-gradient(90deg, rgba(45,117,108,.12) 50%, transparent 50%),
+        linear-gradient(rgba(45,117,108,.12) 50%, transparent 50%);
+      background-size: 10px 10px;
     }
 
-    .artifact-card h3 {
-      margin: 0 0 10px;
-      max-width: 85%;
+    .artifact h3,
+    .stream-card h3,
+    .horizon-card h3 {
+      margin: 0 0 9px;
+      max-width: 86%;
       font-size: 20px;
-      line-height: 1.18;
+      line-height: 1.16;
     }
 
-    .artifact-card p {
+    .artifact p,
+    .stream-card p,
+    .horizon-card p {
       margin: 0;
       color: var(--muted);
       font-size: 14px;
     }
 
-    .artifact-meta {
+    .chips {
       display: flex;
       flex-wrap: wrap;
       gap: 6px;
-      margin-top: 14px;
+      margin-top: 12px;
     }
 
     .chip {
@@ -455,78 +555,14 @@
       align-items: center;
       padding: 3px 8px;
       border-radius: 999px;
-      background: rgba(45, 116, 104, 0.1);
-      border: 1px solid rgba(45, 116, 104, 0.16);
-      color: #31524b;
+      background: rgba(45,117,108,.10);
+      border: 1px solid rgba(45,117,108,.16);
+      color: #31544d;
       font-size: 12px;
-      font-weight: 800;
+      font-weight: 850;
     }
 
-    .system-map,
-    .progress-grid {
-      display: grid;
-      gap: 10px;
-      padding: 16px;
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      background: rgba(255, 250, 240, 0.86);
-      box-shadow: var(--shadow);
-    }
-
-    .system-row {
-      display: grid;
-      grid-template-columns: 190px minmax(0, 1fr);
-      gap: 12px;
-      padding: 13px;
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      background: #fff;
-    }
-
-    .system-row b {
-      color: var(--green);
-    }
-
-    .progress-grid {
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-    }
-
-    .progress-card {
-      padding: 15px;
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      background: #fff;
-    }
-
-    .progress-card b {
-      display: block;
-      font-size: 24px;
-      color: var(--green);
-    }
-
-    .progress-card span {
-      color: var(--muted);
-      font-size: 13px;
-    }
-
-    .bar {
-      height: 8px;
-      margin-top: 11px;
-      overflow: hidden;
-      border-radius: 999px;
-      background: #e2dfd4;
-    }
-
-    .bar i {
-      display: block;
-      height: 100%;
-      border-radius: inherit;
-      background: var(--green);
-    }
-
-    .hidden {
-      display: none;
-    }
+    .hidden { display: none; }
 
     footer {
       margin-top: 26px;
@@ -535,36 +571,45 @@
     }
 
     @media (max-width: 980px) {
-      .world-gallery,
-      .artifacts,
-      .progress-grid,
-      .journey-strip {
-        grid-template-columns: 1fr 1fr;
+      .route-strip,
+      .artifact-grid,
+      .horizon-grid,
+      .progress-panel {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
-      .world-gallery {
-        grid-template-rows: auto;
+      .world-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
-      .region-career,
-      .region-life,
-      .region-idea,
-      .region-ai,
-      .region-content,
-      .region-studio {
+      .wide,
+      .small {
         grid-column: span 1;
+      }
+
+      .stream-grid {
+        grid-template-columns: 1fr;
       }
     }
 
     @media (max-width: 640px) {
       .shell {
         width: min(100vw - 20px, 1180px);
-        padding-top: 12px;
+        padding-top: 10px;
+      }
+
+      .topline,
+      .section-head {
+        display: block;
+      }
+
+      .path,
+      .view-switcher {
+        margin-top: 10px;
       }
 
       .hero {
         min-height: auto;
-        padding: 18px;
       }
 
       .hero::before,
@@ -572,26 +617,19 @@
         display: none;
       }
 
+      .hero-copy {
+        padding: 18px;
+      }
+
       h1 {
-        font-size: 40px;
+        font-size: 39px;
       }
 
-      .journey-strip,
-      .world-gallery,
-      .artifacts,
-      .progress-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .section-head {
-        display: block;
-      }
-
-      .view-switcher {
-        margin-top: 12px;
-      }
-
-      .system-row {
+      .route-strip,
+      .world-grid,
+      .artifact-grid,
+      .horizon-grid,
+      .progress-panel {
         grid-template-columns: 1fr;
       }
     }
@@ -599,175 +637,128 @@
 </head>
 <body>
   <div class="shell">
-    <nav class="topbar" aria-label="Exhibition path">
+    <nav class="topline" aria-label="Exhibition route">
       <span>Personal Growth World Exhibition / 个人成长世界展</span>
-      <div class="route">
-        <a href="#journey">Start</a>
+      <div class="path">
+        <a href="#start">Start</a>
         <a href="#world">Journey</a>
         <a href="#world">World</a>
         <a href="#artifacts">Artifacts</a>
       </div>
     </nav>
 
-    <header class="hero">
+    <header class="hero" id="start">
       <div class="hero-copy">
-        <p class="eyebrow">Story Layer / 故事层</p>
+        <p class="eyebrow">Living Pixel Atlas / 活的小世界地图</p>
         <h1>P0 Personal Skill Simulator Atlas</h1>
-        <p class="subtitle">A living personal world for capability, imagination, experiments and growth / 一个持续生长的个人成长世界展</p>
-        <div class="story-line">
-          从复杂系统里训练判断力，从真实项目里留下证据，再把灵感、生活、AI 实验和未来商业想象，慢慢经营成一个可被浏览的小世界。
+        <p class="subtitle">一个持续生长的小世界，收藏能力、脑洞、实验、表达和未来可能。</p>
+        <div class="story-card">
+          从复杂系统里训练判断力，从真实项目里留下证据，再把灵感、生活、AI 实验和未来商业想象，慢慢经营成一个能被浏览的小世界。
         </div>
         <div class="hero-actions">
-          <a class="action primary" href="#world">开始浏览世界 / Enter the World</a>
-          <a class="action" href="p0-career-capability-map-v0.html">进入 Career District / 职业能力区</a>
+          <a class="btn primary" href="#world">进入世界 / Enter Atlas</a>
+          <a class="btn" href="p0-career-capability-map-v0.html">查看 Career District</a>
+        </div>
+        <div class="route-strip">
+          <div class="route-card"><b>Story</b><span>先看到这个人的成长路径。</span></div>
+          <div class="route-card"><b>World</b><span>再浏览能力、模拟、脑洞和实验区域。</span></div>
+          <div class="route-card"><b>Artifacts</b><span>最后看见成长留下的设计痕迹。</span></div>
+          <div class="route-card"><b>Progress</b><span>XP 和状态只作为补充视图。</span></div>
         </div>
       </div>
     </header>
-
-    <section class="section" id="journey">
-      <div class="section-head">
-        <div>
-          <h2>Narrative Flow / 浏览路径</h2>
-          <p>为观众准备的阅读顺序：先理解这个人，再进入世界，最后看见成长留下的痕迹。</p>
-        </div>
-      </div>
-      <div class="journey-strip">
-        <div class="journey-step"><b>Start</b><span>看到一个长期生长的小世界，而不是一份简历。</span></div>
-        <div class="journey-step"><b>Journey</b><span>理解 2022-2026 的能力如何从真实项目中长出来。</span></div>
-        <div class="journey-step"><b>World</b><span>浏览六个区域：能力、生活、灵感、AI、内容和工坊。</span></div>
-        <div class="journey-step"><b>Artifacts</b><span>看到设计动作和成果如何留下证据。</span></div>
-      </div>
-    </section>
 
     <section class="section" id="world">
       <div class="section-head">
         <div>
           <h2>World View / 小世界视图</h2>
-          <p>默认视图是世界展览。System View 是结构说明，Progress View 才显示 XP / Level / Stats。</p>
+          <p>默认视图是可浏览的小世界，不是工程 dashboard。Hover 区域可看到更多线索。</p>
         </div>
         <div class="view-switcher">
-          <button class="switch active" data-view="world">World View / 小世界视图</button>
-          <button class="switch" data-view="system">System View / 系统结构视图</button>
-          <button class="switch" data-view="progress">Progress View / 成长数据视图</button>
+          <button class="switch active" data-view="world">World View</button>
+          <button class="switch" data-view="story">Story View</button>
+          <button class="switch" data-view="progress">Progress View</button>
         </div>
       </div>
 
       <div class="view-panel" id="worldView">
-        <div class="world-gallery">
-          <a class="world-region region-career" href="p0-career-capability-map-v0.html" data-mark="C">
+        <div class="world-grid">
+          <a class="region career wide" href="p0-career-capability-map-v0.html" data-icon="C">
             <div class="region-inner">
-              <div class="region-top">
-                <span class="region-code">#7 / Evidence</span>
-                <span class="status formed">已形成</span>
-              </div>
-              <h3>Career District / 职业能力区</h3>
-              <p>真实项目、能力证据、项目产出和迁移方向在这里沉淀成可视化地图。</p>
-              <div class="meaning">
-                <b>意义 / Meaning</b>
-                <span>这是小世界里最早成形的城区，让观众先看见“能力从哪里来”。</span>
-              </div>
-              <span class="region-entry">进入区域 / Enter District -></span>
+              <div class="region-top"><span class="code">#7 / Reality Field</span><span class="tag formed">Active</span></div>
+              <h3>Career District / 现实能力场</h3>
+              <p>真实项目和能力证据已经形成地图，是 P0 里最先亮起的区域。</p>
+              <div class="reveal"><div class="reveal-box">证据：年度成长、能力节点、项目痕迹、迁移方向。</div></div>
+              <span class="enter">进入 / Enter -></span>
             </div>
           </a>
 
-          <article class="world-region region-life" data-mark="L">
+          <article class="region sim wide" data-icon="S">
             <div class="region-inner">
-              <div class="region-top">
-                <span class="region-code">#14 / Life RPG</span>
-                <span class="status growing">成长中</span>
-              </div>
-              <h3>Life Garden / 生活成长区</h3>
-              <p>健康、习惯、能量和行动节奏在这里成为能力系统背后的土壤。</p>
-              <div class="meaning">
-                <b>意义 / Meaning</b>
-                <span>它解释长期创造为什么能持续，而不是只展示已经完成的工作。</span>
-              </div>
-              <span class="region-entry">入口建设中 / Growing Entrance</span>
+              <div class="region-top"><span class="code">#14 / Expression Mode</span><span class="tag building">Building</span></div>
+              <h3>Simulation Field / 表达场</h3>
+              <p>把现实能力、what-if 脑洞和成长状态转译成另一种可玩的世界视角。</p>
+              <div class="reveal"><div class="reveal-box">下一步：当前技能人格、脑洞场、转译地图。</div></div>
+              <span class="enter">建设中 / Building</span>
             </div>
           </article>
 
-          <article class="world-region region-idea" data-mark="I">
+          <article class="region idea small" data-icon="?">
             <div class="region-inner">
-              <div class="region-top">
-                <span class="region-code">What-if</span>
-                <span class="status imagining">想象中</span>
-              </div>
-              <h3>Idea Ocean / 想象海</h3>
-              <p>那些突然出现的设定、隐喻和问题意识，在这里变成潜在能力的潮汐。</p>
-              <div class="meaning">
-                <b>意义 / Meaning</b>
-                <span>让 P0 不只是现实履历，也能展示看世界的方式。</span>
-              </div>
-              <span class="region-entry">收集中 / Collecting</span>
+              <div class="region-top"><span class="code">IF</span><span class="tag dreaming">Planned</span></div>
+              <h3>What-if Islands / 脑洞奇想岛</h3>
+              <p>收纳突然出现的设定、隐喻、另类用户和隐藏技能。</p>
+              <div class="reveal"><div class="reveal-box">方向：What-if / Prototype seed / Story.</div></div>
+              <span class="enter">收集中</span>
             </div>
           </article>
 
-          <article class="world-region region-ai" data-mark="AI">
+          <article class="region ai small" data-icon="AI">
             <div class="region-inner">
-              <div class="region-top">
-                <span class="region-code">P2 / Lab</span>
-                <span class="status experimenting">实验中</span>
-              </div>
-              <h3>AI Lab / AI 实验室</h3>
-              <p>AI-native 工作流、产品原型和灵感整理能力，会在这里变成实验装置。</p>
-              <div class="meaning">
-                <b>意义 / Meaning</b>
-                <span>把能力从“会做”推进到“能搭系统、能做产品实验”。</span>
-              </div>
-              <span class="region-entry">等待实验 / Experiment Soon</span>
+              <div class="region-top"><span class="code">P2</span><span class="tag planned">Planned</span></div>
+              <h3>AI Lab / 实验室</h3>
+              <p>AI-native 工作流、产品原型和灵感整理工具会在这里发芽。</p>
+              <div class="reveal"><div class="reveal-box">方向：Agent workflow / AI tools / Lab notes.</div></div>
+              <span class="enter">待实验</span>
             </div>
           </article>
 
-          <article class="world-region region-content" data-mark="T">
+          <article class="region content small" data-icon="T">
             <div class="region-inner">
-              <div class="region-top">
-                <span class="region-code">P3 / Signal</span>
-                <span class="status expressing">表达中</span>
-              </div>
-              <h3>Content Tower / 内容表达塔</h3>
-              <p>观察、复盘、审美和个人叙事在这里被整理成能被外界接收的信号。</p>
-              <div class="meaning">
-                <b>意义 / Meaning</b>
-                <span>它让小世界不只自我运转，也能被别人理解和记住。</span>
-              </div>
-              <span class="region-entry">信号待校准 / Tuning Signal</span>
+              <div class="region-top"><span class="code">P3</span><span class="tag signal">Planned</span></div>
+              <h3>Content Tower / 表达塔</h3>
+              <p>把观察、复盘、审美和个人叙事整理成可被接收的信号。</p>
+              <div class="reveal"><div class="reveal-box">方向：Topic stream / voice / public signal.</div></div>
+              <span class="enter">待校准</span>
             </div>
           </article>
 
-          <article class="world-region region-studio" data-mark="S">
+          <article class="region studio small" data-icon="$">
             <div class="region-inner">
-              <div class="region-top">
-                <span class="region-code">P4 / Studio</span>
-                <span class="status future">未来</span>
-              </div>
+              <div class="region-top"><span class="code">P4</span><span class="tag backlog">Backlog</span></div>
               <h3>Studio Market / 设计师工坊</h3>
-              <p>审美实验、数字产品、商业想象和未来个人 IP 资产，会在这里慢慢摆摊。</p>
-              <div class="meaning">
-                <b>意义 / Meaning</b>
-                <span>它保留长期商业与审美可能性，但暂时不抢主线。</span>
-              </div>
-              <span class="region-entry">未来开放 / Future Market</span>
+              <p>审美实验、数字产品、商业想象和未来个人 IP 资产暂存在这里。</p>
+              <div class="reveal"><div class="reveal-box">方向：Digital goods / studio ideas / productization.</div></div>
+              <span class="enter">未来开放</span>
             </div>
           </article>
         </div>
       </div>
 
-      <div class="view-panel hidden" id="systemView">
-        <div class="system-map">
-          <div class="system-row"><b>P0 Overall</b><span>Personal Skill Simulator Atlas / 个人技能模拟器地图，是总系统，不等于单一职业总结。</span></div>
-          <div class="system-row"><b>#7 Career</b><span>Career Capability Evidence System / 职业能力证据系统，对应 Career District。</span></div>
-          <div class="system-row"><b>#14 Life</b><span>Life Simulation System / 生活模拟系统，对应 Life Garden / Life RPG。</span></div>
-          <div class="system-row"><b>Inspiration</b><span>Human Spark + AI Scout，为 Idea Ocean、AI Lab、Content Tower、Studio Market 提供素材。</span></div>
-          <div class="system-row"><b>Repository</b><span>docs 是 UI 层，drafts 是实验层，issues 是执行层，README 是唯一系统定义源。</span></div>
+      <div class="view-panel hidden" id="storyView">
+        <div class="panel story-panel">
+          <div class="story-beat"><b>2022-2023 / 从复杂系统开始</b><span>先学会拆解业务、流程、跨端协同和任务链路。</span></div>
+          <div class="story-beat"><b>2024-2026 / 从交付走向能力场</b><span>系统入口、设置体验、通信竞争力和智能信息处理开始形成可见证据。</span></div>
+          <div class="story-beat"><b>Next / 从能力地图走向小世界</b><span>现实能力会继续连接脑洞、AI 实验、内容表达和未来工坊。</span></div>
         </div>
       </div>
 
       <div class="view-panel hidden" id="progressView">
-        <div class="progress-grid">
-          <div class="progress-card"><b>Level 01</b><span>World Foundation / 世界地基</span><div class="bar"><i style="width: 68%"></i></div></div>
-          <div class="progress-card"><b>XP 42</b><span>Structured assets / 结构化资产</span><div class="bar"><i style="width: 42%"></i></div></div>
-          <div class="progress-card"><b>6 Areas</b><span>World regions / 世界区域</span><div class="bar"><i style="width: 55%"></i></div></div>
-          <div class="progress-card"><b>1 Active</b><span>Active district / 已形成区域</span><div class="bar"><i style="width: 18%"></i></div></div>
+        <div class="panel progress-panel">
+          <div class="progress-card"><b>Level 01</b><span>World foundation / 世界地基</span><div class="bar"><i style="width:68%"></i></div></div>
+          <div class="progress-card"><b>XP 42</b><span>Structured traces / 结构化痕迹</span><div class="bar"><i style="width:42%"></i></div></div>
+          <div class="progress-card"><b>6 Areas</b><span>Visible regions / 可见区域</span><div class="bar"><i style="width:55%"></i></div></div>
+          <div class="progress-card"><b>1 Active</b><span>Active field / 已启动能力场</span><div class="bar"><i style="width:18%"></i></div></div>
         </div>
       </div>
     </section>
@@ -776,35 +767,76 @@
       <div class="section-head">
         <div>
           <h2>Artifacts / 成长留下的痕迹</h2>
-          <p>这里展示的不是模块，而是世界里已经留下的设计痕迹。它们让观众知道：这些能力不是口号。</p>
+          <p>不是模块清单，而是观众能看懂的成长证据。Hover 可展开一点点背景。</p>
         </div>
       </div>
-      <div class="artifacts">
-        <article class="artifact-card">
+      <div class="artifact-grid">
+        <article class="artifact">
           <h3>智控键设计 / Smart Control Key</h3>
           <p>系统入口、硬件触发、多场景联动和反馈状态的设计痕迹。</p>
-          <div class="artifact-meta"><span class="chip">System Entry</span><span class="chip">Hardware UX</span></div>
+          <div class="chips"><span class="chip">System Entry</span><span class="chip">Hardware UX</span></div>
+          <div class="reveal"><div class="reveal-box">能力来源：入口设计、多场景协同、创新抽象。</div></div>
         </article>
-        <article class="artifact-card">
+        <article class="artifact">
           <h3>设置系统重构 / Settings System</h3>
           <p>信息架构、配置路径、基础体验治理和细节打磨的沉淀。</p>
-          <div class="artifact-meta"><span class="chip">IA</span><span class="chip">Foundation UX</span></div>
+          <div class="chips"><span class="chip">IA</span><span class="chip">Foundation UX</span></div>
+          <div class="reveal"><div class="reveal-box">能力来源：结构化、端到端交付、基础体验治理。</div></div>
         </article>
-        <article class="artifact-card">
+        <article class="artifact">
           <h3>无网通信体验 / Offline Communication</h3>
           <p>弱网/无网、对讲、找人、组网和状态恢复相关体验证据。</p>
-          <div class="artifact-meta"><span class="chip">Communication</span><span class="chip">Scenario UX</span></div>
+          <div class="chips"><span class="chip">Communication</span><span class="chip">Scenario UX</span></div>
+          <div class="reveal"><div class="reveal-box">能力来源：复杂通信场景、状态设计、体验指标转化。</div></div>
         </article>
-        <article class="artifact-card">
+        <article class="artifact">
           <h3>信息结构设计 / Information Structure</h3>
           <p>重要信息提取、结构化呈现、提醒策略和 AI 信息处理的痕迹。</p>
-          <div class="artifact-meta"><span class="chip">Message UX</span><span class="chip">AI-native</span></div>
+          <div class="chips"><span class="chip">Message UX</span><span class="chip">AI-native</span></div>
+          <div class="reveal"><div class="reveal-box">能力来源：信息结构、提醒策略、AI-native 产品想象。</div></div>
         </article>
       </div>
     </section>
 
+    <section class="section">
+      <div class="section-head">
+        <div>
+          <h2>Inspiration Stream / 灵感流</h2>
+          <p>这里仅展示 preview。完整素材与来源确认留在本地草稿和未来工具中。</p>
+        </div>
+      </div>
+      <div class="stream-grid">
+        <article class="stream-card">
+          <h3>Human Spark / 我自己迸发的脑洞</h3>
+          <p>情绪天气、技能花园、小世界经营系统等灵感，可以转化为 What-if、Content 或 Studio。</p>
+          <div class="chips"><span class="chip">What-if</span><span class="chip">Content</span><span class="chip">Studio</span></div>
+          <div style="margin-top:14px"><a class="btn" href="inspiration/">打开灵感流 / Open Stream</a></div>
+        </article>
+        <article class="stream-card">
+          <h3>AI Scout / AI 灵感侦察员</h3>
+          <p>未来可以主动收集和整理灵感素材，但必须标注 source，经过脱敏检查和人工确认。</p>
+          <div class="chips"><span class="chip">Product</span><span class="chip">Source Check</span><span class="chip">Human Confirm</span></div>
+          <div style="margin-top:14px"><a class="btn" href="inspiration/">查看 seed board / Seed Board</a></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <div>
+          <h2>Time Horizon / 世界成长预览</h2>
+          <p>短句式蓝图，让人看到这个世界会继续生长。</p>
+        </div>
+      </div>
+      <div class="horizon-grid">
+        <article class="horizon-card"><h3>Now / 当前</h3><p>Career field 已亮起，脑洞和模拟场开始聚合。</p></article>
+        <article class="horizon-card"><h3>5 Years / 五年</h3><p>能力系统、AI idea stream、内容表达和生活机制开始互相供能。</p></article>
+        <article class="horizon-card"><h3>10 Years / 十年</h3><p>成为可持续经营的个人世界、作品系统、商业实验和 IP 资产。</p></article>
+      </div>
+    </section>
+
     <footer>
-      P0 is a personal growth world exhibition, not a dashboard. README remains the single source of system definition.
+      P0 is a Living Pixel Atlas, not a dashboard. README remains the single source of system definition.
     </footer>
   </div>
 
@@ -812,7 +844,7 @@
     const switches = document.querySelectorAll(".switch");
     const views = {
       world: document.getElementById("worldView"),
-      system: document.getElementById("systemView"),
+      story: document.getElementById("storyView"),
       progress: document.getElementById("progressView")
     };
 

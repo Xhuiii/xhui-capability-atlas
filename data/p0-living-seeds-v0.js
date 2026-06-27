@@ -1,0 +1,122 @@
+window.P0_LIVING_SEEDS = [
+  {
+    id: "seed-001",
+    title: "情绪天气站",
+    source: "human",
+    type: "what_if",
+    status: "raw",
+    visibleSummary: "把情绪状态可视化成天气系统。",
+    privateNotes: "placeholder only, do not expose on page",
+    linkedLayer: "simulation",
+    nextAction: "转成 what-if card",
+    safetyNote: "脱敏，无外部来源"
+  },
+  {
+    id: "seed-002",
+    title: "AI 灵感侦察员",
+    source: "ai_scout",
+    type: "system",
+    status: "raw",
+    visibleSummary: "让 AI 帮忙整理趋势、案例和灵感线索，但必须人工确认。",
+    privateNotes: "future scout workflow placeholder; source required before use",
+    linkedLayer: "ai-lab",
+    nextAction: "定义 source 标注规则",
+    safetyNote: "未来能力，需人工确认和来源标注"
+  },
+  {
+    id: "seed-003",
+    title: "职业能力证据地图",
+    source: "reality",
+    type: "career",
+    status: "developed",
+    visibleSummary: "把 2022-2026 的真实项目能力整理成可视化证据地图。",
+    privateNotes: "career layer data source; keep all evidence sanitized",
+    linkedLayer: "career",
+    nextAction: "补充证据 chips 和迁移桥",
+    safetyNote: "只使用脱敏项目簇和抽象能力描述"
+  },
+  {
+    id: "seed-004",
+    title: "信息人格系统",
+    source: "human",
+    type: "product",
+    status: "raw",
+    visibleSummary: "把不同类型的信息转译成有性格的提醒和处理方式。",
+    privateNotes: "could connect message UX and AI assistant concepts",
+    linkedLayer: "ai-lab",
+    nextAction: "整理 3 种信息人格",
+    safetyNote: "概念化表达，无敏感来源"
+  },
+  {
+    id: "seed-005",
+    title: "设计复盘信号塔",
+    source: "reflection",
+    type: "content",
+    status: "selected",
+    visibleSummary: "把每周设计复盘提炼成可持续表达的内容信号。",
+    privateNotes: "weekly reflection format can become content tower input",
+    linkedLayer: "content",
+    nextAction: "写一条 100 字复盘样例",
+    safetyNote: "不写具体内部项目细节"
+  },
+  {
+    id: "seed-006",
+    title: "小世界经营系统",
+    source: "human",
+    type: "system",
+    status: "selected",
+    visibleSummary: "把能力、灵感、生活和实验组织成一个可浏览的小世界。",
+    privateNotes: "core metaphor for P0 homepage and future OS",
+    linkedLayer: "simulation",
+    nextAction: "连接首页 World View",
+    safetyNote: "个人系统隐喻，无外部来源"
+  },
+  {
+    id: "seed-007",
+    title: "未来通信方式",
+    source: "human",
+    type: "what_if",
+    status: "raw",
+    visibleSummary: "想象弱网、无网和未来场景里的另类通信体验。",
+    privateNotes: "abstract only; do not include proprietary project details",
+    linkedLayer: "what-if",
+    nextAction: "转成 simulation idea card",
+    safetyNote: "保持抽象，不写未公开细节"
+  },
+  {
+    id: "seed-008",
+    title: "AI 产品实验卡池",
+    source: "ai_scout",
+    type: "product",
+    status: "raw",
+    visibleSummary: "收集可被快速验证的 AI 小工具和交互模式。",
+    privateNotes: "requires source links when real scout is enabled",
+    linkedLayer: "ai-lab",
+    nextAction: "建立候选标准",
+    safetyNote: "静态占位，未来需 source 和人工确认"
+  },
+  {
+    id: "seed-009",
+    title: "设计师工坊货架",
+    source: "human",
+    type: "studio",
+    status: "raw",
+    visibleSummary: "把审美实验、数字产品和未来商品想象暂存在 Studio Market。",
+    privateNotes: "studio backlog seed; avoid opening too early",
+    linkedLayer: "studio",
+    nextAction: "列出 3 个可售卖形态",
+    safetyNote: "个人商业想象，无敏感内容"
+  },
+  {
+    id: "seed-010",
+    title: "月度世界更新仪式",
+    source: "reflection",
+    type: "system",
+    status: "selected",
+    visibleSummary: "每月把 selected seeds 转化为 P0 世界状态更新。",
+    privateNotes: "monthly world update rhythm; can later become issue template",
+    linkedLayer: "simulation",
+    nextAction: "定义 monthly update checklist",
+    safetyNote: "只记录脱敏、可公开的世界状态"
+  }
+];

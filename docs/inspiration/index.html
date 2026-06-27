@@ -1,0 +1,461 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Inspiration Stream / P0 Living Personal OS</title>
+  <style>
+    :root {
+      --felt: #f5eedf;
+      --paper: #fff9ee;
+      --ink: #202721;
+      --muted: #667066;
+      --line: rgba(32,39,33,.14);
+      --pixel: rgba(32,39,33,.055);
+      --green: #2f756a;
+      --purple: #765f8f;
+      --blue: #527095;
+      --clay: #9b6539;
+      --rose: #9b5d6c;
+      --shadow: 0 22px 70px rgba(42,46,40,.13);
+      --radius: 16px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      line-height: 1.5;
+      background:
+        radial-gradient(circle at 14% 8%, rgba(118,95,143,.18), transparent 22%),
+        radial-gradient(circle at 84% 10%, rgba(47,117,106,.18), transparent 24%),
+        linear-gradient(var(--pixel) 1px, transparent 1px),
+        linear-gradient(90deg, var(--pixel) 1px, transparent 1px),
+        linear-gradient(180deg, #fbf4e7 0%, var(--felt) 100%);
+      background-size: auto, auto, 24px 24px, 24px 24px, auto;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: .25;
+      background-image: radial-gradient(rgba(32,39,33,.13) .55px, transparent .55px);
+      background-size: 5px 5px;
+      mix-blend-mode: multiply;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; }
+
+    .shell {
+      width: min(1160px, calc(100vw - 28px));
+      margin: 0 auto;
+      padding: 18px 0 44px;
+    }
+
+    .topline {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: center;
+      color: var(--muted);
+      font-size: 13px;
+      margin-bottom: 12px;
+    }
+
+    .back {
+      padding: 6px 10px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255,249,238,.72);
+      font-weight: 800;
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      min-height: 340px;
+      padding: clamp(22px, 5vw, 44px);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      background:
+        linear-gradient(135deg, rgba(255,249,238,.98), rgba(235,226,208,.9)),
+        var(--paper);
+      box-shadow: var(--shadow);
+    }
+
+    .hero::after {
+      content: "Human Spark + AI Scout";
+      position: absolute;
+      right: 28px;
+      bottom: 24px;
+      color: rgba(32,39,33,.28);
+      font-weight: 900;
+    }
+
+    .hero-map {
+      position: absolute;
+      right: clamp(10px, 6vw, 70px);
+      bottom: 42px;
+      width: min(42vw, 420px);
+      aspect-ratio: 1.45;
+      border: 2px dashed rgba(118,95,143,.25);
+      border-radius: 42% 58% 44% 56%;
+      background:
+        radial-gradient(circle at 26% 48%, rgba(118,95,143,.22), transparent 13%),
+        radial-gradient(circle at 56% 30%, rgba(47,117,106,.22), transparent 13%),
+        radial-gradient(circle at 76% 68%, rgba(155,101,57,.18), transparent 13%),
+        linear-gradient(rgba(32,39,33,.04) 2px, transparent 2px),
+        linear-gradient(90deg, rgba(32,39,33,.04) 2px, transparent 2px);
+      background-size: auto, auto, auto, 26px 26px, 26px 26px;
+      transform: rotate(3deg);
+    }
+
+    .hero-copy {
+      position: relative;
+      z-index: 1;
+      width: min(680px, 100%);
+    }
+
+    .eyebrow {
+      margin: 0 0 12px;
+      color: var(--purple);
+      font-size: 13px;
+      font-weight: 950;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(42px, 8vw, 86px);
+      line-height: .95;
+      letter-spacing: 0;
+    }
+
+    .subtitle {
+      max-width: 620px;
+      margin: 18px 0 0;
+      color: #465047;
+      font-size: clamp(18px, 2vw, 23px);
+    }
+
+    .section {
+      margin-top: 26px;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 14px;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: clamp(24px, 3vw, 34px);
+    }
+
+    .section-head p {
+      margin: 6px 0 0;
+      color: var(--muted);
+    }
+
+    .filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .filter {
+      min-height: 34px;
+      padding: 6px 10px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255,249,238,.82);
+      color: var(--ink);
+      cursor: pointer;
+      font-weight: 850;
+      transition: transform .15s ease, background .15s ease;
+    }
+
+    .filter:hover { transform: translateY(-1px); }
+    .filter.active { color: #fff; background: var(--purple); border-color: var(--purple); }
+
+    .board {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .seed {
+      position: relative;
+      min-height: 230px;
+      overflow: hidden;
+      padding: 16px;
+      border: 2px solid rgba(32,39,33,.11);
+      border-radius: var(--radius);
+      background: rgba(255,249,238,.9);
+      box-shadow: var(--shadow);
+      transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+    }
+
+    .seed:hover {
+      transform: translateY(-4px) rotate(-.3deg);
+      border-color: rgba(118,95,143,.35);
+      box-shadow: 0 0 0 1px rgba(255,255,255,.7), 0 20px 60px rgba(118,95,143,.18);
+    }
+
+    .seed::after {
+      content: attr(data-type);
+      position: absolute;
+      right: 10px;
+      bottom: -8px;
+      color: rgba(32,39,33,.055);
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+      font-size: 42px;
+      font-weight: 950;
+      text-transform: uppercase;
+    }
+
+    .seed h3 {
+      margin: 12px 0 8px;
+      font-size: 20px;
+      line-height: 1.16;
+    }
+
+    .seed p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .chip {
+      display: inline-flex;
+      min-height: 24px;
+      align-items: center;
+      padding: 3px 8px;
+      border-radius: 999px;
+      background: rgba(47,117,106,.10);
+      border: 1px solid rgba(47,117,106,.16);
+      color: #31544d;
+      font-size: 12px;
+      font-weight: 850;
+    }
+
+    .next {
+      position: relative;
+      z-index: 1;
+      margin-top: 14px;
+      padding: 10px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: rgba(255,255,255,.58);
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .map {
+      display: grid;
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .map-node {
+      min-height: 120px;
+      padding: 13px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255,249,238,.86);
+      box-shadow: var(--shadow);
+    }
+
+    .map-node b {
+      display: block;
+      color: var(--purple);
+      margin-bottom: 6px;
+    }
+
+    .map-node span {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .safety {
+      padding: 16px;
+      border: 1px solid rgba(47,117,106,.2);
+      border-left: 6px solid var(--green);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      background: rgba(255,249,238,.86);
+      color: #3e4a42;
+      box-shadow: var(--shadow);
+    }
+
+    .empty {
+      grid-column: 1 / -1;
+      padding: 24px;
+      border: 1px dashed var(--line);
+      border-radius: var(--radius);
+      color: var(--muted);
+      background: rgba(255,249,238,.72);
+      text-align: center;
+    }
+
+    @media (max-width: 980px) {
+      .board { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .map { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .hero-map { opacity: .28; }
+    }
+
+    @media (max-width: 640px) {
+      .shell { width: min(100vw - 20px, 1160px); }
+      .topline, .section-head { display: block; }
+      .filters { margin-top: 10px; }
+      .hero { min-height: auto; padding: 18px; }
+      .hero-map, .hero::after { display: none; }
+      h1 { font-size: 40px; }
+      .board, .map { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <nav class="topline">
+      <a class="back" href="../">← Back to P0 Atlas</a>
+      <span>Living Personal OS / Inspiration Stream</span>
+    </nav>
+
+    <header class="hero">
+      <div class="hero-map" aria-hidden="true"></div>
+      <div class="hero-copy">
+        <p class="eyebrow">Human Spark + AI Scout</p>
+        <h1>Inspiration Stream</h1>
+        <p class="subtitle">Human Spark + AI Scout feed the living atlas.</p>
+      </div>
+    </header>
+
+    <section class="section">
+      <div class="section-head">
+        <div>
+          <h2>Seed Board / 灵感素材板</h2>
+          <p>页面只展示公开摘要，隐藏本地备注。</p>
+        </div>
+      </div>
+      <div class="filters" id="sourceFilters"></div>
+      <div class="filters" id="typeFilters" style="margin-top:8px"></div>
+      <div class="filters" id="layerFilters" style="margin-top:8px"></div>
+    </section>
+
+    <section class="section">
+      <div class="board" id="seedBoard"></div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <div>
+          <h2>Conversion Map / 转化地图</h2>
+          <p>seed 会被筛选、确认，再流向不同 P0 区域。</p>
+        </div>
+      </div>
+      <div class="map">
+        <div class="map-node"><b>What-if</b><span>设定、隐喻、另类用户和隐藏技能。</span></div>
+        <div class="map-node"><b>AI Product Lab</b><span>AI 工具、Agent、产品原型和交互模式。</span></div>
+        <div class="map-node"><b>Content</b><span>选题、表达、叙事和公开信号。</span></div>
+        <div class="map-node"><b>Studio</b><span>审美实验、数字商品和未来商业想象。</span></div>
+        <div class="map-node"><b>Career</b><span>真实证据、项目能力和迁移方向。</span></div>
+        <div class="map-node"><b>Simulation</b><span>把能力和脑洞转译成可玩的世界视角。</span></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="safety">
+        AI Scout only suggests. Tina decides what becomes part of the world. 外部素材必须标注 source，经过脱敏检查和人工确认。
+      </div>
+    </section>
+  </div>
+
+  <script src="../../data/p0-living-seeds-v0.js"></script>
+  <script>
+    const seeds = window.P0_LIVING_SEEDS || [];
+    const state = { source: "all", type: "all", linkedLayer: "all" };
+
+    const board = document.getElementById("seedBoard");
+    const sourceFilters = document.getElementById("sourceFilters");
+    const typeFilters = document.getElementById("typeFilters");
+    const layerFilters = document.getElementById("layerFilters");
+
+    function unique(key) {
+      return [...new Set(seeds.map((seed) => seed[key]))].sort();
+    }
+
+    function makeFilters(target, key, label) {
+      const values = ["all", ...unique(key)];
+      target.innerHTML = values.map((value) => {
+        const text = value === "all" ? `All ${label}` : value;
+        return `<button class="filter ${state[key] === value ? "active" : ""}" data-key="${key}" data-value="${value}">${text}</button>`;
+      }).join("");
+    }
+
+    function renderFilters() {
+      makeFilters(sourceFilters, "source", "sources");
+      makeFilters(typeFilters, "type", "types");
+      makeFilters(layerFilters, "linkedLayer", "layers");
+      document.querySelectorAll(".filter").forEach((button) => {
+        button.addEventListener("click", () => {
+          state[button.dataset.key] = button.dataset.value;
+          render();
+        });
+      });
+    }
+
+    function visibleSeeds() {
+      return seeds.filter((seed) => (
+        (state.source === "all" || seed.source === state.source) &&
+        (state.type === "all" || seed.type === state.type) &&
+        (state.linkedLayer === "all" || seed.linkedLayer === state.linkedLayer)
+      ));
+    }
+
+    function renderBoard() {
+      const items = visibleSeeds();
+      if (!items.length) {
+        board.innerHTML = `<div class="empty">No seeds match current filters.</div>`;
+        return;
+      }
+
+      board.innerHTML = items.map((seed) => `
+        <article class="seed" data-type="${seed.type}">
+          <div class="meta">
+            <span class="chip">${seed.source}</span>
+            <span class="chip">${seed.type}</span>
+            <span class="chip">${seed.linkedLayer}</span>
+          </div>
+          <h3>${seed.title}</h3>
+          <p>${seed.visibleSummary}</p>
+          <div class="next"><strong>Next / 下一步：</strong>${seed.nextAction}</div>
+        </article>
+      `).join("");
+    }
+
+    function render() {
+      renderFilters();
+      renderBoard();
+    }
+
+    render();
+  </script>
+</body>
+</html>
