@@ -3,277 +3,177 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Inspiration Stream / P0 Living Personal OS</title>
+  <title>Inspiration Stream · P0</title>
   <style>
     :root {
-      --felt: #f5eedf;
-      --paper: #fff9ee;
-      --ink: #202721;
-      --muted: #667066;
-      --line: rgba(32,39,33,.14);
-      --pixel: rgba(32,39,33,.055);
-      --green: #2f756a;
-      --purple: #765f8f;
-      --blue: #527095;
-      --clay: #9b6539;
-      --rose: #9b5d6c;
-      --shadow: 0 22px 70px rgba(42,46,40,.13);
-      --radius: 16px;
+      --bg: #f7f0e5;
+      --panel: #fffaf1;
+      --ink: #20251f;
+      --muted: #6d7469;
+      --line: rgba(32,37,31,0.14);
+      --human: #a36b52;
+      --ai: #547b9b;
+      --sim: #74659b;
+      --soft: #eadfce;
+      --shadow: 0 18px 46px rgba(32, 37, 31, 0.12);
     }
 
     * { box-sizing: border-box; }
 
     body {
       margin: 0;
-      min-height: 100vh;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang SC", "Helvetica Neue", Arial, sans-serif;
       color: var(--ink);
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
-      line-height: 1.5;
       background:
-        radial-gradient(circle at 14% 8%, rgba(118,95,143,.18), transparent 22%),
-        radial-gradient(circle at 84% 10%, rgba(47,117,106,.18), transparent 24%),
-        linear-gradient(var(--pixel) 1px, transparent 1px),
-        linear-gradient(90deg, var(--pixel) 1px, transparent 1px),
-        linear-gradient(180deg, #fbf4e7 0%, var(--felt) 100%);
-      background-size: auto, auto, 24px 24px, 24px 24px, auto;
-    }
-
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      opacity: .25;
-      background-image: radial-gradient(rgba(32,39,33,.13) .55px, transparent .55px);
-      background-size: 5px 5px;
-      mix-blend-mode: multiply;
+        radial-gradient(circle at 15% 10%, rgba(163, 107, 82, 0.16), transparent 28%),
+        radial-gradient(circle at 85% 0%, rgba(84, 123, 155, 0.16), transparent 25%),
+        linear-gradient(135deg, #f8f1e7 0%, #f0e6d7 100%);
+      line-height: 1.55;
     }
 
     a { color: inherit; text-decoration: none; }
-    button { font: inherit; }
 
-    .shell {
-      width: min(1160px, calc(100vw - 28px));
+    .wrap {
+      width: min(1080px, calc(100% - 32px));
       margin: 0 auto;
-      padding: 18px 0 44px;
+      padding: 30px 0 54px;
     }
 
-    .topline {
+    .topbar {
       display: flex;
       justify-content: space-between;
       gap: 12px;
       align-items: center;
+      margin-bottom: 22px;
       color: var(--muted);
-      font-size: 13px;
-      margin-bottom: 12px;
+      font-size: 14px;
     }
 
-    .back {
-      padding: 6px 10px;
+    .topbar a {
       border: 1px solid var(--line);
       border-radius: 999px;
-      background: rgba(255,249,238,.72);
-      font-weight: 800;
+      padding: 8px 12px;
+      background: rgba(255,255,255,0.48);
+    }
+
+    .hero, .panel {
+      background: rgba(255,250,241,0.76);
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(14px);
     }
 
     .hero {
-      position: relative;
-      overflow: hidden;
-      min-height: 340px;
-      padding: clamp(22px, 5vw, 44px);
-      border: 1px solid var(--line);
-      border-radius: 22px;
-      background:
-        linear-gradient(135deg, rgba(255,249,238,.98), rgba(235,226,208,.9)),
-        var(--paper);
-      box-shadow: var(--shadow);
-    }
-
-    .hero::after {
-      content: "Human Spark + AI Scout";
-      position: absolute;
-      right: 28px;
-      bottom: 24px;
-      color: rgba(32,39,33,.28);
-      font-weight: 900;
-    }
-
-    .hero-map {
-      position: absolute;
-      right: clamp(10px, 6vw, 70px);
-      bottom: 42px;
-      width: min(42vw, 420px);
-      aspect-ratio: 1.45;
-      border: 2px dashed rgba(118,95,143,.25);
-      border-radius: 42% 58% 44% 56%;
-      background:
-        radial-gradient(circle at 26% 48%, rgba(118,95,143,.22), transparent 13%),
-        radial-gradient(circle at 56% 30%, rgba(47,117,106,.22), transparent 13%),
-        radial-gradient(circle at 76% 68%, rgba(155,101,57,.18), transparent 13%),
-        linear-gradient(rgba(32,39,33,.04) 2px, transparent 2px),
-        linear-gradient(90deg, rgba(32,39,33,.04) 2px, transparent 2px);
-      background-size: auto, auto, auto, 26px 26px, 26px 26px;
-      transform: rotate(3deg);
-    }
-
-    .hero-copy {
-      position: relative;
-      z-index: 1;
-      width: min(680px, 100%);
-    }
-
-    .eyebrow {
-      margin: 0 0 12px;
-      color: var(--purple);
-      font-size: 13px;
-      font-weight: 950;
-      text-transform: uppercase;
+      padding: 34px;
+      margin-bottom: 18px;
     }
 
     h1 {
+      margin: 0 0 10px;
+      font-size: clamp(36px, 7vw, 76px);
+      line-height: .96;
+      letter-spacing: -0.06em;
+    }
+
+    .lead {
+      max-width: 720px;
       margin: 0;
-      font-size: clamp(42px, 8vw, 86px);
-      line-height: .95;
-      letter-spacing: 0;
+      color: #3f473d;
+      font-size: clamp(17px, 2vw, 23px);
     }
 
-    .subtitle {
-      max-width: 620px;
-      margin: 18px 0 0;
-      color: #465047;
-      font-size: clamp(18px, 2vw, 23px);
-    }
-
-    .section {
-      margin-top: 26px;
-    }
-
-    .section-head {
+    .tabs {
       display: flex;
-      align-items: end;
-      justify-content: space-between;
-      gap: 16px;
-      margin-bottom: 14px;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 24px;
+    }
+
+    .tab {
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 10px 14px;
+      background: rgba(255,255,255,0.52);
+      color: var(--ink);
+      font-weight: 650;
+      cursor: pointer;
+      transition: transform .16s ease, background .16s ease;
+    }
+
+    .tab:hover { transform: translateY(-2px); }
+
+    .tab.active {
+      background: var(--ink);
+      color: #fffaf1;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 18px;
+      margin-top: 18px;
+    }
+
+    .panel {
+      padding: 24px;
     }
 
     h2 {
-      margin: 0;
-      font-size: clamp(24px, 3vw, 34px);
+      margin: 0 0 8px;
+      font-size: clamp(24px, 3vw, 36px);
+      letter-spacing: -0.04em;
     }
 
-    .section-head p {
-      margin: 6px 0 0;
+    .panel-intro {
       color: var(--muted);
+      margin: 0 0 18px;
     }
 
-    .filters {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
+    .mode-note {
+      border-radius: 22px;
+      padding: 18px;
+      border: 1px dashed rgba(32,37,31,0.18);
+      background: rgba(255,255,255,0.42);
+      color: var(--muted);
+      margin-bottom: 16px;
     }
 
-    .filter {
-      min-height: 34px;
-      padding: 6px 10px;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      background: rgba(255,249,238,.82);
-      color: var(--ink);
-      cursor: pointer;
-      font-weight: 850;
-      transition: transform .15s ease, background .15s ease;
-    }
-
-    .filter:hover { transform: translateY(-1px); }
-    .filter.active { color: #fff; background: var(--purple); border-color: var(--purple); }
-
-    .board {
+    .seed-grid {
       display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
+      grid-template-columns: repeat(2, 1fr);
       gap: 12px;
     }
 
-    .feed-section {
-      margin-top: 18px;
-      padding: 14px;
-      border: 1px solid var(--line);
-      border-radius: 20px;
-      background: rgba(255,249,238,.56);
-      box-shadow: var(--shadow);
+    .seed-card {
+      min-height: 150px;
+      border-radius: 22px;
+      padding: 18px;
+      border: 1px solid rgba(32,37,31,0.14);
+      background: rgba(255,255,255,0.54);
+      transition: transform .16s ease, box-shadow .16s ease;
     }
 
-    .feed-header {
-      display: flex;
-      align-items: end;
-      justify-content: space-between;
-      gap: 16px;
-      margin-bottom: 12px;
-      padding: 2px 2px 0;
+    .seed-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 14px 30px rgba(32,37,31,0.12);
     }
 
-    .feed-header h3 {
-      margin: 0;
-      font-size: clamp(22px, 3vw, 30px);
+    .seed-card.human {
+      box-shadow: inset 0 0 0 1px rgba(163,107,82,0.12);
     }
 
-    .feed-header p {
-      margin: 5px 0 0;
-      color: var(--muted);
+    .seed-card.ai_scout {
+      box-shadow: inset 0 0 0 1px rgba(84,123,155,0.14);
     }
 
-    .feed-label {
-      display: inline-flex;
-      align-items: center;
-      min-height: 28px;
-      padding: 4px 9px;
-      border-radius: 999px;
-      color: #fff;
-      background: var(--purple);
-      font-size: 12px;
-      font-weight: 900;
+    .seed-card h3 {
+      margin: 0 0 8px;
+      font-size: 18px;
+      letter-spacing: -0.02em;
     }
 
-    .feed-label.ai {
-      background: var(--blue);
-    }
-
-    .seed {
-      position: relative;
-      min-height: 230px;
-      overflow: hidden;
-      padding: 16px;
-      border: 2px solid rgba(32,39,33,.11);
-      border-radius: var(--radius);
-      background: rgba(255,249,238,.9);
-      box-shadow: var(--shadow);
-      transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
-    }
-
-    .seed:hover {
-      transform: translateY(-4px) rotate(-.3deg);
-      border-color: rgba(118,95,143,.35);
-      box-shadow: 0 0 0 1px rgba(255,255,255,.7), 0 20px 60px rgba(118,95,143,.18);
-    }
-
-    .seed::after {
-      content: attr(data-type);
-      position: absolute;
-      right: 10px;
-      bottom: -8px;
-      color: rgba(32,39,33,.055);
-      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
-      font-size: 42px;
-      font-weight: 950;
-      text-transform: uppercase;
-    }
-
-    .seed h3 {
-      margin: 12px 0 8px;
-      font-size: 20px;
-      line-height: 1.16;
-    }
-
-    .seed p {
+    .seed-card p {
       margin: 0;
       color: var(--muted);
       font-size: 14px;
@@ -283,245 +183,212 @@
       display: flex;
       flex-wrap: wrap;
       gap: 6px;
-      position: relative;
-      z-index: 1;
+      margin-bottom: 12px;
     }
 
     .chip {
       display: inline-flex;
-      min-height: 24px;
-      align-items: center;
-      padding: 3px 8px;
       border-radius: 999px;
-      background: rgba(47,117,106,.10);
-      border: 1px solid rgba(47,117,106,.16);
-      color: #31544d;
+      padding: 4px 8px;
+      background: rgba(32,37,31,0.07);
+      color: var(--muted);
       font-size: 12px;
-      font-weight: 850;
     }
 
-    .next {
-      position: relative;
-      z-index: 1;
-      margin-top: 14px;
-      padding: 10px;
-      border: 1px solid var(--line);
-      border-radius: 12px;
-      background: rgba(255,255,255,.58);
-      color: var(--muted);
-      font-size: 13px;
-    }
+    .chip.human { color: var(--human); background: rgba(163,107,82,0.10); }
+    .chip.ai_scout { color: var(--ai); background: rgba(84,123,155,0.11); }
 
-    .map {
+    .map-list {
       display: grid;
-      grid-template-columns: repeat(6, minmax(0, 1fr));
       gap: 10px;
+      margin-top: 14px;
     }
 
-    .map-node {
-      min-height: 120px;
+    .map-item {
+      border: 1px solid rgba(32,37,31,0.12);
+      border-radius: 18px;
       padding: 13px;
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      background: rgba(255,249,238,.86);
-      box-shadow: var(--shadow);
+      background: rgba(255,255,255,0.42);
     }
 
-    .map-node b {
-      display: block;
-      color: var(--purple);
-      margin-bottom: 6px;
-    }
+    .map-item strong { display: block; margin-bottom: 4px; }
+    .map-item span { color: var(--muted); font-size: 14px; }
 
-    .map-node span {
+    footer {
       color: var(--muted);
       font-size: 13px;
+      padding: 22px 4px 0;
     }
 
-    .safety {
-      padding: 16px;
-      border: 1px solid rgba(47,117,106,.2);
-      border-left: 6px solid var(--green);
-      border-radius: 0 var(--radius) var(--radius) 0;
-      background: rgba(255,249,238,.86);
-      color: #3e4a42;
-      box-shadow: var(--shadow);
-    }
-
-    .empty {
-      grid-column: 1 / -1;
-      padding: 24px;
-      border: 1px dashed var(--line);
-      border-radius: var(--radius);
-      color: var(--muted);
-      background: rgba(255,249,238,.72);
-      text-align: center;
-    }
-
-    @media (max-width: 980px) {
-      .board { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-      .map { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-      .hero-map { opacity: .28; }
-    }
-
-    @media (max-width: 640px) {
-      .shell { width: min(100vw - 20px, 1160px); }
-      .topline, .section-head { display: block; }
-      .feed-header { display: block; }
-      .feed-label { margin-top: 8px; }
-      .filters { margin-top: 10px; }
-      .hero { min-height: auto; padding: 18px; }
-      .hero-map, .hero::after { display: none; }
-      h1 { font-size: 40px; }
-      .board, .map { grid-template-columns: 1fr; }
+    @media (max-width: 860px) {
+      .grid { grid-template-columns: 1fr; }
+      .seed-grid { grid-template-columns: 1fr; }
+      .hero { padding: 26px; }
     }
   </style>
 </head>
 <body>
-  <div class="shell">
-    <nav class="topline">
-      <a class="back" href="../">← Back to P0 Atlas</a>
-      <span>Living Personal OS / Inspiration Stream</span>
+  <main class="wrap">
+    <nav class="topbar">
+      <a href="../">← 返回 P0 首页</a>
+      <span>Inspiration Stream · Human Spark + AI Scout</span>
     </nav>
 
-    <header class="hero">
-      <div class="hero-map" aria-hidden="true"></div>
-      <div class="hero-copy">
-        <p class="eyebrow">Human Spark + AI Scout</p>
-        <h1>Inspiration Stream</h1>
-        <p class="subtitle">Human Spark + AI Scout feed the living atlas.</p>
+    <section class="hero">
+      <h1>灵感流不是一个列表。</h1>
+      <p class="lead">
+        它是 P0 的输入层：我的即时脑洞、AI 提供的灵感建议、以及未来可转译成 what-if、产品、内容或 Studio 的素材。
+      </p>
+      <div class="tabs" aria-label="inspiration modes">
+        <button class="tab active" type="button" data-mode="all">全部</button>
+        <button class="tab" type="button" data-mode="human">Human Spark</button>
+        <button class="tab" type="button" data-mode="ai">AI Scout</button>
+        <button class="tab" type="button" data-mode="simulation">Simulation / #14</button>
       </div>
-    </header>
-
-    <section class="section">
-      <div class="section-head">
-        <div>
-          <h2>Seed Filters / 灵感筛选</h2>
-          <p>Human Spark 和 AI Scout 分开展示；筛选只影响各自 feed 内的卡片。</p>
-        </div>
-      </div>
-      <div class="filters" id="typeFilters" style="margin-top:8px"></div>
-      <div class="filters" id="layerFilters" style="margin-top:8px"></div>
     </section>
 
-    <section class="section">
-      <div class="feed-section">
-        <div class="feed-header">
-          <div>
-            <h3>Human Spark / 我自己迸发的脑洞</h3>
-            <p>来自 Tina 自己的观察、隐喻、产品念头和内容灵感。</p>
+    <section class="grid">
+      <aside class="panel">
+        <h2 id="mode-title">全部灵感</h2>
+        <p id="mode-intro" class="panel-intro">
+          Human Spark 来自我自己；AI Scout 来自 AI 的结构化建议。两者都不会自动进入系统，必须人工确认。
+        </p>
+
+        <div class="mode-note">
+          <strong>公开页面只展示 summary。</strong><br>
+          私密备注、完整结构、待办细节保留在本地 drafts 和 Git 记录里。
+        </div>
+
+        <div class="map-list">
+          <div class="map-item" id="simulation">
+            <strong>#14 Simulation Expression Mode</strong>
+            <span>把当前技能、what-if、脑洞和成长状态转译成另一种可玩的世界表达。</span>
           </div>
-          <span class="feed-label">source: human</span>
-        </div>
-        <div class="board" id="human-spark"></div>
-      </div>
-
-      <div class="feed-section">
-        <div class="feed-header">
-          <div>
-            <h3>AI Scout / AI 灵感侦察员</h3>
-            <p>AI 未来可协助收集和整理素材，但必须人工确认。</p>
+          <div class="map-item" id="what-if">
+            <strong>What-if</strong>
+            <span>脑洞先作为素材存在，后续再变成卡片、原型或内容。</span>
           </div>
-          <span class="feed-label ai">source: ai_scout</span>
+          <div class="map-item" id="studio">
+            <strong>Studio / Content / Product</strong>
+            <span>灵感可以流向内容表达、AI 产品实验或设计师工坊。</span>
+          </div>
         </div>
-        <div class="board" id="ai-scout"></div>
-      </div>
+      </aside>
+
+      <section class="panel">
+        <h2>Seed Board</h2>
+        <p class="panel-intro">当前只放少量示例 seed，先保证结构清晰。后续再接入更强的 UX 表达和自动化机制。</p>
+        <div class="seed-grid" id="seed-grid" aria-live="polite"></div>
+      </section>
     </section>
 
-    <section class="section">
-      <div class="section-head">
-        <div>
-          <h2>Conversion Map / 转化地图</h2>
-          <p>seed 会被筛选、确认，再流向不同 P0 区域。</p>
-        </div>
-      </div>
-      <div class="map">
-        <div class="map-node"><b>What-if</b><span>设定、隐喻、另类用户和隐藏技能。</span></div>
-        <div class="map-node"><b>AI Product Lab</b><span>AI 工具、Agent、产品原型和交互模式。</span></div>
-        <div class="map-node"><b>Content</b><span>选题、表达、叙事和公开信号。</span></div>
-        <div class="map-node"><b>Studio</b><span>审美实验、数字商品和未来商业想象。</span></div>
-        <div class="map-node"><b>Career</b><span>真实证据、项目能力和迁移方向。</span></div>
-        <div class="map-node"><b>Simulation</b><span>把能力和脑洞转译成可玩的世界视角。</span></div>
-      </div>
-    </section>
+    <footer>
+      AI Scout only suggests. Tina decides what becomes part of the world.
+    </footer>
+  </main>
 
-    <section class="section">
-      <div class="safety">
-        AI Scout only suggests. Tina decides what becomes part of the world. 外部素材必须标注 source，经过脱敏检查和人工确认。
-      </div>
-    </section>
-  </div>
-
-  <script src="../../data/p0-living-seeds-v0.js"></script>
   <script>
-    const seeds = window.P0_LIVING_SEEDS || [];
-    const humanSpark = seeds.filter(s => s.source === "human");
-    const aiScout = seeds.filter(s => s.source === "ai_scout");
-    const state = { type: "all", linkedLayer: "all" };
-
-    const humanSparkBoard = document.getElementById("human-spark");
-    const aiScoutBoard = document.getElementById("ai-scout");
-    const typeFilters = document.getElementById("typeFilters");
-    const layerFilters = document.getElementById("layerFilters");
-
-    function unique(key) {
-      return [...new Set(seeds.map((seed) => seed[key]))].sort();
-    }
-
-    function makeFilters(target, key, label) {
-      const values = ["all", ...unique(key)];
-      target.innerHTML = values.map((value) => {
-        const text = value === "all" ? `All ${label}` : value;
-        return `<button class="filter ${state[key] === value ? "active" : ""}" data-key="${key}" data-value="${value}">${text}</button>`;
-      }).join("");
-    }
-
-    function renderFilters() {
-      makeFilters(typeFilters, "type", "types");
-      makeFilters(layerFilters, "linkedLayer", "layers");
-      document.querySelectorAll(".filter").forEach((button) => {
-        button.addEventListener("click", () => {
-          state[button.dataset.key] = button.dataset.value;
-          render();
-        });
-      });
-    }
-
-    function visibleSeeds(seedList) {
-      return seedList.filter((seed) => (
-        (state.type === "all" || seed.type === state.type) &&
-        (state.linkedLayer === "all" || seed.linkedLayer === state.linkedLayer)
-      ));
-    }
-
-    function renderBoard(target, seedList, emptyText) {
-      const items = visibleSeeds(seedList);
-      if (!items.length) {
-        target.innerHTML = `<div class="empty">${emptyText}</div>`;
-        return;
+    const seeds = [
+      {
+        title: "情绪天气站",
+        source: "human",
+        type: "what-if",
+        layer: "simulation",
+        summary: "把人的情绪状态转译成天气、气压、云层和光线。"
+      },
+      {
+        title: "信息人格系统",
+        source: "human",
+        type: "system",
+        layer: "simulation",
+        summary: "让信息不只是提醒，而是拥有不同性格和表达方式。"
+      },
+      {
+        title: "小世界经营状态",
+        source: "human",
+        type: "system",
+        layer: "home",
+        summary: "默认首页不是 XP 条，而是当前世界和未来世界的经营状态。"
+      },
+      {
+        title: "AI 灵感侦察员",
+        source: "ai_scout",
+        type: "system",
+        layer: "inspiration",
+        summary: "AI 每周提出灵感 seed，但不自动写入仓库，必须人工确认。"
+      },
+      {
+        title: "能力转译成地图",
+        source: "ai_scout",
+        type: "career",
+        layer: "career",
+        summary: "把职业项目从简历条目转成能力节点、路径和证据。"
+      },
+      {
+        title: "未来通信方式",
+        source: "ai_scout",
+        type: "product",
+        layer: "what-if",
+        summary: "探索通信如何从工具变成场景、陪伴或状态表达。"
       }
+    ];
 
-      target.innerHTML = items.map((seed) => `
-        <article class="seed" data-type="${seed.type}">
+    const grid = document.getElementById("seed-grid");
+    const title = document.getElementById("mode-title");
+    const intro = document.getElementById("mode-intro");
+    const tabs = Array.from(document.querySelectorAll(".tab"));
+
+    const copy = {
+      all: ["全部灵感", "Human Spark 和 AI Scout 共同构成输入层，但来源和决策权必须分清。"],
+      human: ["Human Spark", "来自我自己的即时脑洞、观察、联想和表达欲。"],
+      ai: ["AI Scout", "来自 AI 的结构化灵感建议，只能提出，不自动发布，不自动入库。"],
+      simulation: ["Simulation / #14", "把技能、脑洞和成长状态转译成另一种可玩的世界表达方式。"]
+    };
+
+    function render(mode) {
+      tabs.forEach(tab => tab.classList.toggle("active", tab.dataset.mode === mode));
+      title.textContent = copy[mode][0];
+      intro.textContent = copy[mode][1];
+
+      const filtered = seeds.filter(seed => {
+        if (mode === "all") return true;
+        if (mode === "human") return seed.source === "human";
+        if (mode === "ai") return seed.source === "ai_scout";
+        if (mode === "simulation") return seed.layer === "simulation";
+        return true;
+      });
+
+      grid.innerHTML = filtered.map(seed => `
+        <article class="seed-card ${seed.source}">
           <div class="meta">
-            <span class="chip">${seed.source}</span>
+            <span class="chip ${seed.source}">${seed.source === "human" ? "Human Spark" : "AI Scout"}</span>
             <span class="chip">${seed.type}</span>
-            <span class="chip">${seed.linkedLayer}</span>
+            <span class="chip">${seed.layer}</span>
           </div>
           <h3>${seed.title}</h3>
-          <p>${seed.visibleSummary}</p>
-          <div class="next"><strong>Next / 下一步：</strong>${seed.nextAction}</div>
+          <p>${seed.summary}</p>
         </article>
       `).join("");
     }
 
-    function render() {
-      renderFilters();
-      renderBoard(humanSparkBoard, humanSpark, "No Human Spark seeds match current filters.");
-      renderBoard(aiScoutBoard, aiScout, "No AI Scout seeds match current filters.");
+    function modeFromHash() {
+      const hash = window.location.hash.replace("#", "");
+      if (hash === "human") return "human";
+      if (hash === "ai" || hash === "ai-scout") return "ai";
+      if (hash === "simulation" || hash === "14") return "simulation";
+      return "all";
     }
 
-    render();
+    tabs.forEach(tab => {
+      tab.addEventListener("click", () => {
+        const mode = tab.dataset.mode;
+        window.location.hash = mode === "all" ? "" : mode;
+        render(mode);
+      });
+    });
+
+    window.addEventListener("hashchange", () => render(modeFromHash()));
+    render(modeFromHash());
   </script>
 </body>
 </html>
